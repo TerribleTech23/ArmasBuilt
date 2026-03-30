@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArmasBuilt | Precision Hardware Restoration</title>
+    <title>ArmasBuilt | Electronic & Appliance Repair</title>
     <style>
         :root { 
             --bg-dark: #0a050f; 
@@ -21,17 +21,16 @@
             margin: 0; 
             background-image: radial-gradient(circle at 50% -20%, #4c0519 0%, transparent 50%);
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        header { text-align: center; margin-bottom: 50px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
 
-        /* NEW IMAGE LOGO STYLE */
         .main-logo {
-            width: 300px; /* Large and centered */
+            width: 420px;
+            max-width: 90%;
             height: auto;
             display: block;
-            margin: 0 auto 20px;
-            /* Suble glow to match the site aesthetic */
-            filter: drop-shadow(0 0 15px rgba(147, 51, 234, 0.3));
+            margin: 0 auto 10px;
+            filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.4));
         }
 
         h1 { 
@@ -42,65 +41,109 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
+            font-weight: 900;
         }
-        .tagline { font-size: 1.1rem; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }
+        .tagline { font-size: 1.1rem; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
         
-        .grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 40px; }
+        .section-title { 
+            text-align: center; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+            letter-spacing: 3px; 
+            color: var(--accent-red); 
+            margin: 40px 0 20px;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .card { 
             background: var(--card-bg); 
-            padding: 30px; 
+            padding: 25px; 
             border-radius: 12px; 
             border: 1px solid var(--border); 
             transition: 0.3s;
         }
         .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
-        .card h3 { margin-top: 0; color: var(--accent-purple); }
-        
+        .card h3 { margin-top: 0; color: var(--accent-purple); font-size: 1.3rem; }
+        .card ul { padding-left: 20px; margin: 10px 0; font-size: 0.9rem; opacity: 0.9; }
+
+        .cta-box {
+            text-align: center;
+            background: linear-gradient(135deg, #1a0b16 0%, #2d0a24 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--accent-purple);
+            margin-top: 50px;
+        }
+
         .footer { 
             text-align: center; 
-            margin-top: 80px; 
-            padding-top: 30px; 
+            margin-top: 60px; 
+            padding: 30px 0; 
             border-top: 1px solid var(--border); 
+            font-size: 0.8rem;
+            opacity: 0.5;
         }
-        .cta-button { 
+        
+        .status-badge { 
             display: inline-block; 
-            border: 1px solid var(--accent-purple);
-            color: white; 
+            border: 1px solid rgba(147, 51, 234, 0.5); 
+            color: var(--accent-purple); 
             padding: 12px 30px; 
             border-radius: 4px; 
-            text-decoration: none; 
             font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.9rem;
         }
-        .cta-button:hover { background: var(--accent-purple); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="armasbuilt-shield.png" alt="ArmasBuilt Shield Logo" class="main-logo">
-            
+            <img src="armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
             <h1>Armas&bull;Built</h1>
-            <p class="tagline">Precision Hardware Restoration</p>
+            <p class="tagline">Electronics & Appliance Repair</p>
         </header>
 
+        <div class="section-title">Repair Services</div>
         <div class="grid">
             <div class="card">
-                <h3>Integrated Systems Restoration</h3>
-                <p>Architectural repair and refurbishment of mobile devices, laptops, gaming systems, and high-performance computing hardware.</p>
+                <h3>Devices & Gadgets</h3>
+                <ul>
+                    <li><strong>Smartphones:</strong> Screen, Battery, and Charging Port replacement.</li>
+                    <li><strong>Gaming:</strong> Console deep-cleaning, thermal repasting, and controller repairs.</li>
+                    <li><strong>Computers:</strong> Hardware diagnostics, hinge repairs, and component swaps.</li>
+                </ul>
             </div>
+
             <div class="card">
-                <h3>Component-Level Diagnostics</h3>
-                <p>Deep-trace repair and micro-soldering capabilities. Analyzing and recovering complex logic failures through precision hardware intervention.</p>
+                <h3>Technical & Board Level</h3>
+                <ul>
+                    <li><strong>Micro-Soldering:</strong> Board-level repair and FPC connector fixes by mail.</li>
+                    <li><strong>Damage Recovery:</strong> Ultrasonic cleaning and trace restoration.</li>
+                    <li><strong>Small Appliances:</strong> Control board diagnostics and mechanical restoration.</li>
+                </ul>
             </div>
+        </div>
+
+        <div class="section-title">Shop & Flip</div>
+        <div class="grid">
             <div class="card">
-                <h3>Electromechanical Systems</h3>
-                <p>Technical restoration of specialized hardware components and physical device engineering.</p>
+                <h3>Hardware Restoration</h3>
+                <p>I specialize in sourcing broken or dated electronics and appliances, repairing them to original standards, and offering them for sale. Quality tested, professionally restored.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h2 style="margin-top: 0;">Laboratory Status</h2>
+            <p style="margin-bottom: 25px;">ArmasBuilt is currently in the R&D and Infrastructure phase. We will be accepting secure mail-in repairs and local Sacramento service in the future.</p>
+            <div class="status-badge">
+                Service Launch: Coming Soon
             </div>
         </div>
 
         <div class="footer">
-            <a href="mailto:repair@armasbuilt.com" class="cta-button">repair@armasbuilt.com</a>
-            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 ArmasBuilt. All Rights Reserved.</p>
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Repair & Refurbishment Services.</p>
         </div>
     </div>
 </body>
