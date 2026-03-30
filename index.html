@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArmasBuilt | Electronic & Appliance Repair</title>
+    <title>ArmasBuilt | Electronics & Board Restoration</title>
     <style>
         :root { 
             --bg-dark: #0a050f; 
@@ -55,6 +55,10 @@
         }
 
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 600px) {
+            .process-grid { grid-template-columns: 1fr 1fr 1fr; }
+        }
+
         .card { 
             background: var(--card-bg); 
             padding: 25px; 
@@ -65,6 +69,9 @@
         .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
         .card h3 { margin-top: 0; color: var(--accent-purple); font-size: 1.3rem; }
         .card ul { padding-left: 20px; margin: 10px 0; font-size: 0.9rem; opacity: 0.9; }
+
+        .step { text-align: center; padding: 15px; }
+        .step-num { color: var(--accent-red); font-weight: 900; font-size: 1.5rem; display: block; }
 
         .cta-box {
             text-align: center;
@@ -102,48 +109,67 @@
         <header>
             <img src="armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
             <h1>Armas&bull;Built</h1>
-            <p class="tagline">Electronics & Appliance Repair</p>
+            <p class="tagline">Electronics & Board Restoration</p>
         </header>
 
-        <div class="section-title">Repair Services</div>
+        <div class="section-title">Specialized Services</div>
         <div class="grid">
             <div class="card">
-                <h3>Devices & Gadgets</h3>
+                <h3>Technical & Board Level</h3>
                 <ul>
-                    <li><strong>Smartphones:</strong> Screen, Battery, and Charging Port replacement.</li>
-                    <li><strong>Gaming:</strong> Console deep-cleaning, thermal repasting, and controller repairs.</li>
-                    <li><strong>Computers:</strong> Hardware diagnostics, hinge repairs, and component swaps.</li>
+                    <li><strong>Micro-Soldering:</strong> Board-level repair and FPC connector fixes via secure mail-in.</li>
+                    <li><strong>Damage Recovery:</strong> Ultrasonic cleaning, liquid damage mitigation, and trace restoration.</li>
+                    <li><strong>Console & High-End Tech:</strong> Thermal repasting (Liquid Metal), deep-cleaning, and mechanical restoration.</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h3>Technical & Board Level</h3>
+                <h3>Devices & Hardware</h3>
                 <ul>
-                    <li><strong>Micro-Soldering:</strong> Board-level repair and FPC connector fixes by mail.</li>
-                    <li><strong>Damage Recovery:</strong> Ultrasonic cleaning and trace restoration.</li>
-                    <li><strong>Small Appliances:</strong> Control board diagnostics and mechanical restoration.</li>
+                    <li><strong>Smartphones:</strong> Screen, Battery, and Charging Port replacement.</li>
+                    <li><strong>Computers:</strong> Hardware diagnostics, hinge repairs, and component level swaps.</li>
+                    <li><strong>Board-Level Diagnostics:</strong> Advanced troubleshooting of control boards and logic circuits.</li>
                 </ul>
             </div>
         </div>
 
-        <div class="section-title">Shop & Flip</div>
+        <div class="section-title">Nationwide Mail-In Process</div>
+        <div class="grid process-grid">
+            <div class="card step">
+                <span class="step-num">01</span>
+                <strong>Quote</strong>
+                <p style="font-size: 0.8rem;">Submit device details for a repair estimate.</p>
+            </div>
+            <div class="card step">
+                <span class="step-num">02</span>
+                <strong>Ship</strong>
+                <p style="font-size: 0.8rem;">Pack your gear and send it to our lab.</p>
+            </div>
+            <div class="card step">
+                <span class="step-num">03</span>
+                <strong>Restore</strong>
+                <p style="font-size: 0.8rem;">Expert repair, testing, and return shipping.</p>
+            </div>
+        </div>
+
+        <div class="section-title">Hardware Restoration Shop</div>
         <div class="grid">
             <div class="card">
-                <h3>Hardware Restoration</h3>
-                <p>I specialize in sourcing broken or dated electronics and appliances, repairing them to original standards, and offering them for sale. Quality tested, professionally restored.</p>
+                <h3>The Refurbishment Lab</h3>
+                <p>I specialize in sourcing vintage, damaged, or dated hardware, restoring it to factory standards (or better), and offering it for sale. Each piece is quality tested and professionally rebuilt.</p>
             </div>
         </div>
 
         <div class="cta-box">
             <h2 style="margin-top: 0;">Laboratory Status</h2>
-            <p style="margin-bottom: 25px;">ArmasBuilt is currently in the R&D and Infrastructure phase. We will be accepting secure mail-in repairs and local Sacramento service in the future.</p>
+            <p style="margin-bottom: 25px;">ArmasBuilt is currently in the R&D and Infrastructure phase. We are fine-tuning our workflow to ensure the highest standard of precision for future mail-in and local Sacramento services.</p>
             <div class="status-badge">
                 Service Launch: Coming Soon
             </div>
         </div>
 
         <div class="footer">
-            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Repair & Refurbishment Services.</p>
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Restoration & Refurbishment Services.</p>
         </div>
     </div>
 </body>
