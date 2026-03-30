@@ -4,70 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArmasBuilt | Precision Hardware Restoration</title>
-    
     <link rel="icon" type="image/png" href="armasbuilt-logo.png">
-
     <style>
-        /* This whole section is custom for your existing shield logo (from image_21.png) */
         :root { 
-            --bg-dark: #0a050f; /* Deep Midnight Purple - matching image_21.png precisely */
-            --bg-accent: #3a002b; /* Subtle Plum - for the header area to blend with the shield's edges */
-            --card-bg: #1a0b16; /* Dark Plum */
+            --bg-dark: #0a050f; 
+            --card-bg: #1a0b16; 
             --text-main: #f3e8ff; 
             --accent-purple: #9333ea; 
             --accent-red: #dc2626; 
             --border: #4c1d37;
         }
-
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
             background-color: var(--bg-dark); 
             color: var(--text-main); 
             line-height: 1.6; 
             margin: 0; 
-            /* Subtle plum gradient for the top blending area */
-            background-image: linear-gradient(to bottom, var(--bg-accent) 0%, var(--bg-dark) 200px);
+            background-image: radial-gradient(circle at 50% -20%, #4c0519 0%, transparent 50%);
         }
-
         .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        header { text-align: center; margin-bottom: 50px; }
         
-        /* The Header is where we blend the image */
-        header { 
-            text-align: center; 
-            margin-bottom: 50px; 
-            position: relative; 
-            /* We need some space for the shield */
-            padding-top: 250px; 
+        /* THE FIX: This container forces the image to blend into the background */
+        .logo-wrapper {
+            background-color: var(--bg-dark);
+            display: inline-block;
+            padding: 10px;
+            border-radius: 12px;
         }
-        
-        /* The "Floating Shield" is now a blended CSS effect */
-        .shield-blender {
-            position: absolute;
-            top: 20px; /* Adjust this to move the shield up/down */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px; /* Adjust the size of the shield here */
-            height: 300px;
-            
-            /* Use your existing shield logo (the one from image_21.png) */
-            background-image: url('armasbuilt-shield.png');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            /* **THE MAGIC FIX**: This CSS blending mode makes the white/checkerboard areas disappear 
-               and forces the image colors to "overlay" onto the plum header background. 
-               This is how we guarantee a perfect blend with flawless edges. */
-            mix-blend-mode: color-dodge;
-            
-            /* Add a subtle technical "glow" */
-            filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.3));
+        .main-logo {
+            width: 220px;
+            height: auto;
+            /* mix-blend-mode: screen; */ /* This often hides checkerboards on dark themes */
+            display: block;
+            margin: 0 auto;
         }
 
-        /* Branding Text (already in your index.html) */
         h1 { 
             font-size: 3.5rem; 
-            margin: 0; 
+            margin: 10px 0 0; 
             letter-spacing: -2px; 
             background: linear-gradient(to right, var(--accent-red), var(--accent-purple));
             -webkit-background-clip: text;
@@ -75,7 +50,6 @@
             text-transform: uppercase;
         }
         .tagline { font-size: 1.1rem; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }
-        
         .status-badge { 
             display: inline-block; 
             border: 1px solid var(--accent-red); 
@@ -87,25 +61,17 @@
             font-weight: bold;
             letter-spacing: 1px;
         }
-
-        /* Portfolio Cards (rest of the content) */
         .grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         .card { 
             background: var(--card-bg); 
             padding: 30px; 
             border-radius: 12px; 
             border: 1px solid var(--border); 
-            transition: all 0.4s ease;
         }
-        .card:hover { border-color: var(--accent-red); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1); }
-        .card h3 { margin-top: 0; color: var(--accent-purple); font-size: 1.4rem; }
-        
-        .location { margin-top: 20px; font-size: 0.9rem; opacity: 0.5; }
-        
         .footer { 
             text-align: center; 
             margin-top: 80px; 
-            padding-top: 30px; 
+            padding: 30px 0; 
             border-top: 1px solid var(--border); 
         }
         .cta-button { 
@@ -116,43 +82,34 @@
             border-radius: 4px; 
             text-decoration: none; 
             font-weight: bold; 
-            transition: 0.3s;
         }
-        .cta-button:hover { background: var(--accent-purple); color: white; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="shield-blender"></div>
-            
+            <div class="logo-wrapper">
+                <img src="armasbuilt-shield.png" alt="Armas Built" class="main-logo">
+            </div>
             <h1>Armas&bull;Built</h1>
             <p class="tagline">Precision Hardware Restoration</p>
             <div class="status-badge">Laboratory R&D Phase</div>
-            <p class="location">Sacramento Area | Technical Portfolio</p>
         </header>
 
         <div class="grid">
             <div class="card">
                 <h3>Integrated Systems Restoration</h3>
-                <p>Architectural repair and refurbishment of mobile devices, laptops, gaming systems, and high-performance computing hardware. Maintaining hardware integrity through technical precision.</p>
+                <p>Architectural repair and refurbishment of mobile devices, laptops, gaming systems, and high-performance computing hardware.</p>
             </div>
-
             <div class="card">
                 <h3>Component-Level Diagnostics</h3>
-                <p>Deep-trace repair and micro-soldering capabilities. Analyzing and recovering complex logic failures through precision hardware intervention.</p>
-            </div>
-
-            <div class="card">
-                <h3>Electromechanical Systems</h3>
-                <p>Extending beyond digital circuitry into the technical restoration of precision mechanical systems, specialized hardware components, and physical device engineering.</p>
+                <p>Deep-trace repair and micro-soldering capabilities. Analyzing and recovering complex logic failures.</p>
             </div>
         </div>
 
         <div class="footer">
-            <p style="margin-bottom: 25px; opacity: 0.7;">For technical inquiries or future project collaboration:</p>
             <a href="mailto:repair@armasbuilt.com" class="cta-button">repair@armasbuilt.com</a>
-            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 ArmasBuilt. All Rights Reserved.</p>
+            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 ArmasBuilt.</p>
         </div>
     </div>
 </body>
