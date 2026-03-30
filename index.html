@@ -24,24 +24,14 @@
         .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
         header { text-align: center; margin-bottom: 50px; }
 
-        /* REPLACING THE BROKEN IMAGE WITH A CLEAN TECHNICAL SHIELD */
-        .shield-icon {
-            width: 90px;
-            height: 105px;
-            background: linear-gradient(135deg, var(--accent-red), var(--accent-purple));
-            margin: 0 auto 30px;
-            clip-path: polygon(50% 0%, 100% 20%, 100% 70%, 50% 100%, 0% 70%, 0% 20%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 30px rgba(147, 51, 234, 0.3);
-        }
-        .shield-icon::after {
-            content: 'AB';
-            font-weight: 900;
-            font-size: 2rem;
-            color: white;
-            letter-spacing: -1px;
+        /* NEW IMAGE LOGO STYLE */
+        .main-logo {
+            width: 300px; /* Large and centered */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            /* Suble glow to match the site aesthetic */
+            filter: drop-shadow(0 0 15px rgba(147, 51, 234, 0.3));
         }
 
         h1 { 
@@ -63,6 +53,7 @@
             border: 1px solid var(--border); 
             transition: 0.3s;
         }
+        .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
         .card h3 { margin-top: 0; color: var(--accent-purple); }
         
         .footer { 
@@ -80,12 +71,14 @@
             text-decoration: none; 
             font-weight: bold; 
         }
+        .cta-button:hover { background: var(--accent-purple); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="shield-icon"></div>
+            <img src="armasbuilt-shield.png" alt="ArmasBuilt Shield Logo" class="main-logo">
+            
             <h1>Armas&bull;Built</h1>
             <p class="tagline">Precision Hardware Restoration</p>
         </header>
@@ -97,7 +90,7 @@
             </div>
             <div class="card">
                 <h3>Component-Level Diagnostics</h3>
-                <p>Deep-trace repair and micro-soldering capabilities. Analyzing and recovering complex logic failures.</p>
+                <p>Deep-trace repair and micro-soldering capabilities. Analyzing and recovering complex logic failures through precision hardware intervention.</p>
             </div>
             <div class="card">
                 <h3>Electromechanical Systems</h3>
@@ -107,7 +100,7 @@
 
         <div class="footer">
             <a href="mailto:repair@armasbuilt.com" class="cta-button">repair@armasbuilt.com</a>
-            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 ArmasBuilt.</p>
+            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 ArmasBuilt. All Rights Reserved.</p>
         </div>
     </div>
 </body>
