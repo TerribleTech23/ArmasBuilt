@@ -3,51 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArmasBuilt | Precision Electronics & Hardware Restoration</title>
+    <title>ArmasBuilt | Precision Hardware Restoration</title>
     <style>
-        :root { --main-bg: #0f172a; --text-color: #f8fafc; --accent-blue: #38bdf8; --border-gray: #334155; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--main-bg); color: var(--text-color); line-height: 1.6; margin: 0; padding: 0; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        header { text-align: center; border-bottom: 2px solid var(--border-gray); padding-bottom: 40px; margin-bottom: 40px; }
-        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; color: var(--accent-blue); text-transform: uppercase; }
-        .tagline { font-size: 1.2rem; opacity: 0.8; font-weight: 300; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .card { background: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid var(--border-gray); transition: 0.3s; }
-        .card:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
-        .card h3 { margin-top: 0; color: var(--accent-blue); border-bottom: 1px solid var(--border-gray); padding-bottom: 10px; }
-        .footer { text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-gray); font-size: 0.9rem; opacity: 0.6; }
-        .cta-button { display: inline-block; background: var(--accent-blue); color: #000; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        :root { 
+            --bg-dark: #0a050f; /* Deep Midnight Purple */
+            --card-bg: #1a0b16; /* Dark Plum */
+            --text-main: #f3e8ff; 
+            --accent-purple: #9333ea; 
+            --accent-red: #dc2626; 
+            --border: #4c1d37;
+        }
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            margin: 0; 
+            background-image: radial-gradient(circle at 50% -20%, #4c0519 0%, transparent 50%);
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { 
+            font-size: 3.5rem; 
+            margin: 0; 
+            letter-spacing: -2px; 
+            background: linear-gradient(to right, var(--accent-red), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+        .tagline { font-size: 1.1rem; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }
+        .status-badge { 
+            display: inline-block; 
+            border: 1px solid var(--accent-red); 
+            color: var(--accent-red);
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 0.75rem; 
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        .card { 
+            background: var(--card-bg); 
+            padding: 30px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border); 
+            transition: all 0.4s ease;
+        }
+        .card:hover { border-color: var(--accent-red); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1); }
+        .card h3 { margin-top: 0; color: var(--accent-purple); font-size: 1.4rem; }
+        .location { margin-top: 20px; font-size: 0.9rem; opacity: 0.5; }
+        .footer { 
+            text-align: center; 
+            margin-top: 80px; 
+            padding-top: 30px; 
+            border-top: 1px solid var(--border); 
+        }
+        .cta-button { 
+            display: inline-block; 
+            border: 1px solid var(--accent-purple);
+            color: var(--text-main); 
+            padding: 12px 30px; 
+            border-radius: 4px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        .cta-button:hover { background: var(--accent-purple); color: white; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>ArmasBuilt</h1>
-            <p class="tagline">Precision Electronics & Hardware Restoration</p>
-            <p>Carmichael, California | Est. 2026</p>
+            <p class="tagline">Precision Hardware Restoration</p>
+            <div class="status-badge">Laboratory R&D Phase</div>
+            <p class="location">Sacramento Area | Technical Portfolio</p>
         </header>
 
         <div class="grid">
             <div class="card">
-                <h3>Component-Level Logic Repair</h3>
-                <p>Specializing in micro-soldering, trace repair, and precision diagnostics. We fix the core logic failures that other shops won't touch.</p>
+                <h3>Next-Gen & Handheld Systems</h3>
+                <p>Specialized focus on the architectural restoration of PS5, Xbox Series X, and advanced handheld platforms including Steam Deck and ROG Ally.</p>
             </div>
 
             <div class="card">
-                <h3>Next-Gen & Handheld Restoration</h3>
-                <p>Expert service for PS5, Xbox Series X|S, Nintendo Switch, Steam Deck, ROG Ally, and Legion Go. Covering HDMI ports, board-level power issues, and total device refurbishment.</p>
+                <h3>Component-Level Diagnostics</h3>
+                <p>Deep-trace repair and micro-soldering capabilities. Analyzing and recovering complex logic failures through precision hardware intervention.</p>
             </div>
 
             <div class="card">
-                <h3>Precision Hardware & Appliances</h3>
-                <p>Technical restoration for mechanical watches, home appliances, and specialized hardware. Quality assembly and repair with a focus on longevity.</p>
+                <h3>Mechanical Hardware Engineering</h3>
+                <p>Extending beyond digital circuitry into the technical restoration of precision mechanical systems and specialized hardware components.</p>
             </div>
         </div>
 
         <div class="footer">
-            <p>Need a restoration? Email a photo of the device for a quote:</p>
-            <a href="mailto:repair@armasbuilt.com" class="cta-button">Email: repair@armasbuilt.com</a>
-            <p style="margin-top: 30px;">&copy; 2026 ArmasBuilt. All Rights Reserved.</p>
+            <p style="margin-bottom: 25px; opacity: 0.7;">For technical inquiries or future project collaboration:</p>
+            <a href="mailto:repair@armasbuilt.com" class="cta-button">repair@armasbuilt.com</a>
+            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 ArmasBuilt. All Rights Reserved.</p>
         </div>
     </div>
 </body>
