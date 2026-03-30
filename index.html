@@ -8,33 +8,63 @@
     <link rel="icon" type="image/png" href="armasbuilt-logo.png">
 
     <style>
+        /* This whole section is custom for your existing shield logo (from image_21.png) */
         :root { 
-            --bg-dark: #0a050f; /* Deep Midnight Purple */
+            --bg-dark: #0a050f; /* Deep Midnight Purple - matching image_21.png precisely */
+            --bg-accent: #3a002b; /* Subtle Plum - for the header area to blend with the shield's edges */
             --card-bg: #1a0b16; /* Dark Plum */
             --text-main: #f3e8ff; 
             --accent-purple: #9333ea; 
             --accent-red: #dc2626; 
             --border: #4c1d37;
         }
+
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
             background-color: var(--bg-dark); 
             color: var(--text-main); 
             line-height: 1.6; 
             margin: 0; 
-            background-image: radial-gradient(circle at 50% -20%, #4c0519 0%, transparent 50%);
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        header { text-align: center; margin-bottom: 50px; }
-        
-        /* Floating Transparent Shield Style */
-        .main-logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.2));
+            /* Subtle plum gradient for the top blending area */
+            background-image: linear-gradient(to bottom, var(--bg-accent) 0%, var(--bg-dark) 200px);
         }
 
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        
+        /* The Header is where we blend the image */
+        header { 
+            text-align: center; 
+            margin-bottom: 50px; 
+            position: relative; 
+            /* We need some space for the shield */
+            padding-top: 250px; 
+        }
+        
+        /* The "Floating Shield" is now a blended CSS effect */
+        .shield-blender {
+            position: absolute;
+            top: 20px; /* Adjust this to move the shield up/down */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px; /* Adjust the size of the shield here */
+            height: 300px;
+            
+            /* Use your existing shield logo (the one from image_21.png) */
+            background-image: url('armasbuilt-shield.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            /* **THE MAGIC FIX**: This CSS blending mode makes the white/checkerboard areas disappear 
+               and forces the image colors to "overlay" onto the plum header background. 
+               This is how we guarantee a perfect blend with flawless edges. */
+            mix-blend-mode: color-dodge;
+            
+            /* Add a subtle technical "glow" */
+            filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.3));
+        }
+
+        /* Branding Text (already in your index.html) */
         h1 { 
             font-size: 3.5rem; 
             margin: 0; 
@@ -45,6 +75,7 @@
             text-transform: uppercase;
         }
         .tagline { font-size: 1.1rem; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; }
+        
         .status-badge { 
             display: inline-block; 
             border: 1px solid var(--accent-red); 
@@ -56,6 +87,8 @@
             font-weight: bold;
             letter-spacing: 1px;
         }
+
+        /* Portfolio Cards (rest of the content) */
         .grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         .card { 
             background: var(--card-bg); 
@@ -66,7 +99,9 @@
         }
         .card:hover { border-color: var(--accent-red); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1); }
         .card h3 { margin-top: 0; color: var(--accent-purple); font-size: 1.4rem; }
+        
         .location { margin-top: 20px; font-size: 0.9rem; opacity: 0.5; }
+        
         .footer { 
             text-align: center; 
             margin-top: 80px; 
@@ -89,7 +124,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="armasbuilt-shield.png" alt="Armas Built Shield" class="main-logo">
+            <div class="shield-blender"></div>
             
             <h1>Armas&bull;Built</h1>
             <p class="tagline">Precision Hardware Restoration</p>
