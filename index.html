@@ -30,7 +30,13 @@
             background-attachment: fixed;
             background-position: center top;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        /* KILL STRAY BORDERS */
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            border: none; 
+        }
         header { text-align: center; margin-bottom: 40px; }
 
         .main-logo {
@@ -134,13 +140,20 @@
             margin-top: 50px;
         }
 
+        /* FIXED FOOTER: Removed stray vertical lines */
         .footer { 
             text-align: center; 
             margin-top: 60px; 
             padding: 30px 0; 
             border-top: 1px solid var(--border); 
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
             font-size: 0.8rem;
             opacity: 0.5;
+        }
+        .footer p {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9);
         }
         
         .status-badge { 
