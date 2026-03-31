@@ -24,18 +24,20 @@
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 40px; }
 
-        /* FIXED LOGO POSITIONING: Pulls everything UP to kill empty space */
+        /* FIXED LOGO POSITIONING: Uses clip-path to hide image edge artifacts */
         .main-logo {
             width: 200px; 
             max-width: 85%;
             height: auto;
             display: block;
-            /* -40px pulls logo to top of screen | -80px pulls text up to shield */
-            margin: -40px auto -80px; 
+            /* Pushed top to -60px to slide shield higher | -90px pulls text closer */
+            margin: -60px auto -90px; 
             filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.7));
             object-fit: contain;
             transform: scale(2.2); 
             transform-origin: center;
+            /* Digital crop: hides the top 10% of the image file to remove the line */
+            clip-path: inset(10% 0% 0% 0%);
         }
 
         h1 { 
@@ -102,7 +104,13 @@
 
         /* Mobile specific tweaks */
         @media (max-width: 600px) {
-            .main-logo { width: 140px; margin-top: -20px; margin-bottom: -60px; transform: scale(2.5); }
+            .main-logo { 
+                width: 140px; 
+                margin-top: -50px; 
+                margin-bottom: -70px; 
+                transform: scale(2.6); 
+                clip-path: inset(12% 0% 0% 0%);
+            }
             h1 { margin-top: 0; font-size: 2.5rem; }
             .step { padding: 10px 5px; }
             .step-num { font-size: 1.2rem; }
