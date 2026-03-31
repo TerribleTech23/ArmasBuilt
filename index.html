@@ -24,20 +24,24 @@
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 40px; }
 
-        /* FIXED LOGO STYLING */
+        /* LOGO ZOOM & POSITION FIX */
         .main-logo {
-            width: 280px; /* Adjusted for the shield emblem shape */
+            width: 200px; 
             max-width: 85%;
             height: auto;
             display: block;
-            margin: -60px auto 10px; /* Pulls the tall image up to remove dead space */
-            filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.6));
+            /* Pushes logo down from top, and pulls text closer to it */
+            margin: 60px auto 20px; 
+            filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.7));
             object-fit: contain;
+            /* Zooms in on the shield to hide the empty space in the file */
+            transform: scale(2.2); 
+            transform-origin: center;
         }
 
         h1 { 
             font-size: 3.5rem; 
-            margin: 0; 
+            margin: 60px 0 0; /* Increased top margin to account for logo scale */
             letter-spacing: -2px; 
             background: linear-gradient(to right, var(--accent-red), var(--accent-purple));
             -webkit-background-clip: text;
@@ -97,13 +101,13 @@
 
         /* Mobile specific tweaks */
         @media (max-width: 600px) {
-            .main-logo { width: 220px; margin-top: -30px; }
+            .main-logo { width: 140px; margin-top: 80px; transform: scale(2.8); }
+            h1 { margin-top: 80px; font-size: 2.5rem; }
             .step { padding: 10px 5px; }
             .step-num { font-size: 1.2rem; }
             .step strong { font-size: 0.8rem; }
             .step p { display: none; } 
             
-            h1 { font-size: 2.5rem; }
             .tagline { font-size: 0.9rem; }
             .policy-banner { font-size: 0.7rem; }
         }
