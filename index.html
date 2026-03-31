@@ -24,30 +24,31 @@
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 40px; }
 
-        /* LOGO ZOOM & POSITION FIX */
+        /* THE FIX: Pulls the text up into the empty space of the logo */
         .main-logo {
             width: 200px; 
             max-width: 85%;
             height: auto;
             display: block;
-            /* Pushes logo down from top, and pulls text closer to it */
-            margin: 60px auto 20px; 
+            /* Negative bottom margin (the third number) pulls the text UP */
+            margin: 60px auto -80px; 
             filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.7));
             object-fit: contain;
-            /* Zooms in on the shield to hide the empty space in the file */
             transform: scale(2.2); 
             transform-origin: center;
         }
 
         h1 { 
             font-size: 3.5rem; 
-            margin: 60px 0 0; /* Increased top margin to account for logo scale */
+            margin: 0; /* Resetting margin to 0 to remove the gap */
             letter-spacing: -2px; 
             background: linear-gradient(to right, var(--accent-red), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
             font-weight: 900;
+            position: relative;
+            z-index: 10;
         }
         .tagline { font-size: 1.1rem; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; }
         
@@ -101,8 +102,8 @@
 
         /* Mobile specific tweaks */
         @media (max-width: 600px) {
-            .main-logo { width: 140px; margin-top: 80px; transform: scale(2.8); }
-            h1 { margin-top: 80px; font-size: 2.5rem; }
+            .main-logo { width: 140px; margin-top: 80px; margin-bottom: -60px; transform: scale(2.8); }
+            h1 { margin-top: 0; font-size: 2.5rem; }
             .step { padding: 10px 5px; }
             .step-num { font-size: 1.2rem; }
             .step strong { font-size: 0.8rem; }
