@@ -7,11 +7,11 @@
     <style>
         :root { 
             --bg-dark: #0a050f; 
-            --card-bg: #1a0b16; 
+            --card-bg: rgba(26, 11, 22, 0.7); /* Semi-transparent for glass effect */
             --text-main: #f3e8ff; 
             --accent-purple: #9333ea; 
             --accent-red: #dc2626; 
-            --border: #4c1d37;
+            --border: rgba(76, 29, 55, 0.5);
         }
         body { 
             font-family: 'Inter', -apple-system, sans-serif; 
@@ -19,24 +19,28 @@
             color: var(--text-main); 
             line-height: 1.6; 
             margin: 0; 
-            background-image: radial-gradient(circle at 50% -20%, #4c0519 0%, transparent 50%);
+            /* Added a subtle circuit-like mesh pattern to match your wallpaper vibe */
+            background-image: 
+                radial-gradient(circle at 50% -20%, #4c0519 0%, transparent 50%),
+                linear-gradient(rgba(147, 51, 234, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(147, 51, 234, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
+            background-attachment: fixed;
         }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 40px; }
 
-        /* FIXED LOGO POSITIONING: Uses clip-path to hide image edge artifacts */
+        /* LOGO POSITIONING: Pulls everything UP to kill empty space */
         .main-logo {
             width: 200px; 
             max-width: 85%;
             height: auto;
             display: block;
-            /* Pushed top to -60px to slide shield higher | -90px pulls text closer */
             margin: -60px auto -90px; 
             filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.7));
             object-fit: contain;
             transform: scale(2.2); 
             transform-origin: center;
-            /* Digital crop: hides the top 10% of the image file to remove the line */
             clip-path: inset(10% 0% 0% 0%);
         }
 
@@ -61,11 +65,11 @@
             letter-spacing: 3px; 
             color: var(--accent-red); 
             margin: 40px 0 20px;
+            text-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
         }
 
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 
-        /* Force 3 columns for the process grid on all screens */
         .process-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
@@ -73,14 +77,21 @@
             margin-bottom: 15px;
         }
 
+        /* GLASSMORPHISM CARD EFFECT */
         .card { 
             background: var(--card-bg); 
+            backdrop-filter: blur(8px); /* Blur effect for professional look */
+            -webkit-backdrop-filter: blur(8px);
             padding: 25px; 
             border-radius: 12px; 
             border: 1px solid var(--border); 
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
+        .card:hover { 
+            border-color: var(--accent-purple); 
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
         .card h3 { margin-top: 0; color: var(--accent-purple); font-size: 1.3rem; }
         .card ul { padding-left: 20px; margin: 10px 0; font-size: 0.9rem; opacity: 0.9; }
 
@@ -88,10 +99,10 @@
         .step-num { color: var(--accent-red); font-weight: 900; font-size: 1.5rem; display: block; }
         .step strong { display: block; font-size: 1rem; }
 
-        /* No Fix No Fee Badge */
         .policy-banner {
             text-align: center;
             background: rgba(147, 51, 234, 0.1);
+            backdrop-filter: blur(4px);
             border: 1px dashed var(--accent-purple);
             padding: 10px;
             border-radius: 8px;
@@ -102,7 +113,6 @@
         }
         .policy-highlight { color: var(--accent-red); font-weight: bold; }
 
-        /* Mobile specific tweaks */
         @media (max-width: 600px) {
             .main-logo { 
                 width: 140px; 
@@ -116,14 +126,14 @@
             .step-num { font-size: 1.2rem; }
             .step strong { font-size: 0.8rem; }
             .step p { display: none; } 
-            
             .tagline { font-size: 0.9rem; }
             .policy-banner { font-size: 0.7rem; }
         }
 
         .cta-box {
             text-align: center;
-            background: linear-gradient(135deg, #1a0b16 0%, #2d0a24 100%);
+            background: linear-gradient(135deg, rgba(26, 11, 22, 0.9) 0%, rgba(45, 10, 36, 0.9) 100%);
+            backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 15px;
             border: 1px solid var(--accent-purple);
@@ -149,6 +159,7 @@
             text-transform: uppercase; 
             letter-spacing: 2px; 
             font-size: 0.9rem;
+            background: rgba(147, 51, 234, 0.05);
         }
     </style>
 </head>
@@ -167,7 +178,7 @@
                 <ul>
                     <li><strong>Micro-Soldering:</strong> Board-level repair and FPC connector fixes via secure mail-in.</li>
                     <li><strong>Damage Recovery:</strong> Ultrasonic cleaning, liquid damage mitigation, and trace restoration.</li>
-                    <li><strong>Console & High-End Tech:</strong> Thermal repasting (Liquid Metal), deep-cleaning, and mechanical restoration.</li>
+                    <li><strong>Console & High-End Tech:</strong> Thermal overhaul, deep-cleaning, and mechanical restoration.</li>
                 </ul>
             </div>
 
