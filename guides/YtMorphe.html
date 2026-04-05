@@ -3,267 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="only dark">
-    <title>YouTube Morphe Guide | TerribleTech</title>
-    <style>
-        /* --- General Theme Styles (Matching TerribleTech.io) --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent-purple: #8b5cf6; 
-            --accent-red: #ef4444;
-            color-scheme: only dark;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Compact Header Fix - Matched to Index */
-        header {
-            background: var(--card-bg); 
-            padding: 0.5rem 1rem; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100;
-            border-bottom: 2px solid var(--accent-purple); 
-            min-height: 60px; 
-            display: flex; 
-            align-items: center;
-        }
-
-        /* Tighter Navigation - Matched to Index */
-        nav { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            width: 100%; 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            gap: 0.4rem; 
-        } 
-        @media (min-width: 768px) { nav { flex-direction: row; justify-content: space-between; gap: 0; } }
-
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.2rem; 
-            background: linear-gradient(to right, #fff, var(--accent-purple)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            text-decoration: none; 
-        }
-        .logo span { -webkit-text-fill-color: var(--accent-purple); font-weight: 900; }
-
-        .header-tagline { 
-            font-size: 0.65rem; 
-            color: var(--text-dim); 
-            text-transform: uppercase; 
-            letter-spacing: 1.2px; 
-            font-weight: 600; 
-            margin-bottom: 2px; 
-        }
-
-        /* Compact Nav Buttons - Matched to Index */
-        nav ul { display: flex; list-style: none; gap: 0.4rem; flex-wrap: wrap; justify-content: center; row-gap: 0.4rem; }
-        nav a { 
-            color: var(--text-dim); 
-            text-decoration: none; 
-            font-size: 0.75rem; 
-            font-weight: 600; 
-            padding: 0.4rem 0.8rem; 
-            border-radius: 8px; 
-            background: rgba(255, 255, 255, 0.04); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            display: inline-block; 
-        }
-        nav a:hover { color: var(--text-main); background: rgba(139, 92, 246, 0.15); border-color: var(--accent-purple); }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #fff, var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: var(--text-main);
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid var(--card-bg);
-            padding-bottom: 0.5rem;
-        }
-
-        p { margin-bottom: 1.2rem; color: var(--text-dim); }
-
-        .warning {
-            background: rgba(239, 68, 68, 0.1);
-            border-left: 4px solid var(--accent-red);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            color: var(--text-dim);
-        }
-
-        .warning strong { color: var(--accent-red); }
-
-        /* --- Step Styling --- */
-        .step-card {
-            background: var(--card-bg);
-            border: 1px solid #334155;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-        }
-
-        .step-number {
-            color: var(--accent-purple);
-            font-weight: 800;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .step-card h3 { color: var(--text-main); margin-bottom: 1rem; }
-
-        .btn-link {
-            display: inline-block;
-            background: var(--accent-purple);
-            color: #fff;
-            padding: 0.7rem 1.1rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 0.5rem 0;
-            font-size: 0.85rem;
-            transition: opacity 0.2s;
-        }
-
-        .btn-link:hover { opacity: 0.9; color: #fff; }
-
-        .image-placeholder {
-            width: 100%;
-            height: 400px;
-            background: #0f172a;
-            border: 1px dashed #334155;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            color: var(--text-dim);
-            font-style: italic;
-        }
-
-        code {
-            background: #0f172a;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            color: var(--accent-purple);
-            font-family: monospace;
-        }
-
-        .btn-back {
-            display: inline-block;
-            margin-top: 2rem;
-            color: var(--accent-purple);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            border-top: 1px solid #1e293b;
-        }
-    </style>
+    <title>YouTube Morphe Guide | ArmasBuilt</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <img src="../armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
+            <h1>Armas&bull;Built</h1>
+            <p class="tagline">Mobile Hardening & Sovereignty</p>
+            
+            <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
+                <a href="../index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Home</a>
+                <a href="../store.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Store</a>
+                <a href="index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Guides</a>
+            </nav>
+        </header>
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo">TerribleTech<span>.io</span></a>
-            <div class="header-tagline">Privacy. Security. Sovereignty.</div>
-            <ul>
-                <li><a href="apps.html">The Stack</a></li>
-                <li><a href="privacy-hardening.html">Hardening</a></li>
-                <li><a href="guides.html">Home Lab</a></li>
-                <li><a href="thevault.html">The Vault</a></li>
-            </ul>
-        </nav>
-    </header>
+        <main style="padding: 2rem 0;">
+            <div class="section-title">YouTube Morphe</div>
+            <p style="text-align:center; color: #94a3b8; margin-bottom: 30px;">A specialized, modified YouTube client built for the Android ecosystem. Ad-free viewing, background playback, and SponsorBlock integration.</p>
 
-    <main>
-        <h1>YouTube Morphe</h1>
-        <p style="text-align:center;">A specialized, modified YouTube client built for the Android ecosystem. This guide ensures you get the most out of background playback, sponsor-blocking, and ad-free viewing.</p>
+            <div class="guarantee-box" style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #fff; margin-bottom: 30px;">
+                <strong style="color: #ef4444;">Security Notice:</strong> Always download these tools from official sources. This guide points directly to the <code>MorpheApp</code> organization to ensure legitimate APKs.
+            </div>
 
-        <div class="warning">
-            <strong>Security Notice:</strong> Always download these tools from official sources. This guide points directly to the <code>MorpheApp</code> organization to ensure you are getting legitimate APKs.
+            <div class="grid" style="grid-template-columns: 1fr;">
+                <div class="card" style="margin-bottom: 20px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Step 01</span>
+                    <h3 style="margin-top: 10px;">Set Up microG-RE</h3>
+                    <p>To sign in to your Google account without using the official YouTube app, you need a compatibility layer. Morphe works best with the <strong>microG-RE</strong> fork.</p>
+                    <a href="https://github.com/mrvn-f/microG-RE/releases" target="_blank" class="status-badge" style="text-decoration: none; display: inline-block; margin-top: 10px;">Download microG-RE</a>
+                </div>
+
+                <div class="card" style="margin-bottom: 20px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Step 02</span>
+                    <h3 style="margin-top: 10px;">Install via Obtainium</h3>
+                    <p>Add the Morphe repository to <strong>Obtainium</strong> to track and update the app directly from GitHub.</p>
+                    <ul style="margin-left: 1.5rem; color: #94a3b8; margin-bottom: 15px;">
+                        <li>Open Obtainium and click "Add App".</li>
+                        <li>Paste: <code>https://github.com/MorpheApp/YouTubeMorphine</code></li>
+                    </ul>
+                    <a href="https://github.com/MorpheApp" target="_blank" class="status-badge" style="text-decoration: none; display: inline-block;">MorpheApp GitHub</a>
+                </div>
+
+                <div class="card" style="margin-bottom: 20px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Step 03</span>
+                    <h3 style="margin-top: 10px;">Optimization Settings</h3>
+                    <p>Navigate to <strong>Settings > Morphe Settings</strong> to enable the core features:</p>
+                    <ul style="margin-left: 1.5rem; color: #94a3b8;">
+                        <li><strong>SponsorBlock:</strong> Auto-skips sponsor segments.</li>
+                        <li><strong>Return YouTube Dislike:</strong> Re-enables the dislike counter.</li>
+                        <li><strong>OLED Theme:</strong> Pure black theme for battery savings.</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="margin-bottom: 20px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Step 04</span>
+                    <h3 style="margin-top: 10px;">Disabling the Official App</h3>
+                    <p>Ensure links open in Morphe by default by disabling the stock YouTube app via <code>Settings > Apps</code>.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="guides.html" style="color: #a855f7; text-decoration: none; font-weight: bold;">← Back to Guides</a>
+            </div>
+        </main>
+
+        <div class="footer" style="margin-top: 50px;">
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Restoration & Refurbishment Services.</p>
         </div>
-
-        <div class="step-card">
-            <span class="step-number">Step 01</span>
-            <h3>Set Up microG-RE</h3>
-            <p>To sign in to your Google account without using the official YouTube app, you need a compatibility layer. Morphe works best with the <strong>microG-RE</strong> fork.</p>
-            <a href="https://github.com/mrvn-f/microG-RE/releases" target="_blank" class="btn-link">Download microG-RE</a>
-            <div class="image-placeholder">Screen: microG Settings showing Account Sign-in</div>
-        </div>
-
-        <div class="step-card">
-            <span class="step-number">Step 02</span>
-            <h3>Install via Obtainium</h3>
-            <p>Instead of manually downloading APKs, add the Morphe repository to <strong>Obtainium</strong>. This allows you to track and update the app directly from GitHub.</p>
-            <ol style="margin-left: 1.5rem; color: var(--text-dim);">
-                <li>Open Obtainium and click "Add App".</li>
-                <li>Paste the URL: <code>https://github.com/MorpheApp/YouTubeMorphine</code></li>
-                <li>Ensure "Include Prereleases" is toggled if you want the latest experimental builds.</li>
-            </ol>
-            <a href="https://github.com/MorpheApp" target="_blank" class="btn-link">MorpheApp GitHub</a>
-        </div>
-
-        <div class="step-card">
-            <span class="step-number">Step 03</span>
-            <h3>Configuration & Optimization</h3>
-            <p>Once installed, open the app and navigate to <strong>Settings > Morphe Settings</strong> to enable the heavy hitters:</p>
-            <ul style="margin-left: 1.5rem; color: var(--text-dim);">
-                <li><strong>SponsorBlock:</strong> Automatically skips "word from our sponsors" segments.</li>
-                <li><strong>Return YouTube Dislike:</strong> Re-enables the visible dislike counter on videos.</li>
-                <li><strong>OLED Theme:</strong> Pure black theme to save battery on your oled display.</li>
-            </ul>
-            <div class="image-placeholder">Screen: Morphe Settings Menu</div>
-        </div>
-
-        <div class="step-card">
-            <span class="step-number">Step 04</span>
-            <h3>Disabling the Official App</h3>
-            <p>To ensure links open in Morphe by default, you should disable the stock YouTube app via <code>Settings > Apps</code> or using an ADB command in Termux if you have the permissions.</p>
-        </div>
-
-        <a href="guides.html" class="btn-back">← Back to Guides</a>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 TerribleTech.io | Digital Excellence.</p>
-    </footer>
-
+    </div>
 </body>
 </html>
