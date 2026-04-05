@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android Hardening | TerribleTech</title>
-    <style>
-        /* Exact same styling for consistency */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --bg-dark: #0f172a; --card-bg: #1e293b; --text-main: #f8fafc; --text-dim: #94a3b8; --accent-purple: #8b5cf6; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
-        header { background: var(--card-bg); padding: 1.2rem; border-bottom: 2px solid var(--accent-purple); }
-        main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
-        .step-card { background: var(--card-bg); border: 1px solid #334155; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; }
-        .image-placeholder { width: 100%; height: 300px; background: #0f172a; border: 1px dashed #334155; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin: 1.5rem 0; color: var(--text-dim); font-style: italic; }
-    </style>
+    <title>Android Hardening | ArmasBuilt Guides</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header><nav><a href="index.html" style="text-decoration:none; color:white; font-weight:800; font-size:1.6rem;">TerribleTech<span style="color:var(--accent-purple);">.io</span></a></nav></header>
-    <main>
-        <h1 style="font-size:2.8rem; margin-bottom:1.5rem; background: linear-gradient(to right, #fff, var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Android De-Googling</h1>
-        <div class="step-card">
-            <h3 style="color:var(--accent-purple); margin-bottom:1rem;">01. Private DNS</h3>
-            <p style="color:var(--text-dim);">The first step is moving your DNS traffic away from your ISP. Use <strong>NextDNS</strong> or <strong>AdGuard DNS</strong> to block trackers at the system level.</p>
+    <div class="container">
+        <header>
+            <img src="../armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
+            <h1>Armas&bull;Built</h1>
+            <p class="tagline">Mobile Hardening & Sovereignty</p>
+            
+            <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
+                <a href="../index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Home</a>
+                <a href="../store.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Store</a>
+                <a href="index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Guides</a>
+            </nav>
+        </header>
+
+        <main style="padding: 2rem 0;">
+            <div class="section-title">Android De-Googling</div>
+            <p style="text-align:center; color: #94a3b8; margin-bottom: 30px;">Strategic steps for moving your digital life away from big-tech tracking and toward localized privacy.</p>
+
+            <div class="grid" style="grid-template-columns: 1fr;">
+                <div class="card" style="margin-bottom: 20px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Step 01</span>
+                    <h3 style="margin-top: 10px;">Private DNS</h3>
+                    <p>The first step is moving your DNS traffic away from your ISP. Use <strong>NextDNS</strong> or <strong>AdGuard DNS</strong> to block trackers at the system level.</p>
+                </div>
+
+                <div class="card" style="margin-bottom: 20px;">
+                    <span style="color: #a855f7; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Step 02</span>
+                    <h3 style="margin-top: 10px;">Localized Input</h3>
+                    <p>Standard keyboards send your keystrokes to the cloud for "prediction." Use <strong>FUTO Keyboard</strong> for localized voice-to-text that never leaves your device.</p>
+                    <div style="width: 100%; height: 150px; background: #0f172a; border: 1px dashed #334155; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin: 1.5rem 0; color: #94a3b8; font-style: italic; font-size: 0.8rem;">
+                        Screen: FUTO Keyboard Offline Voice-to-Text Model loading
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" style="color: #a855f7; text-decoration: none; font-weight: bold;">← Back to Guides</a>
+            </div>
+        </main>
+
+        <div class="footer" style="margin-top: 50px;">
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Restoration & Refurbishment Services.</p>
         </div>
-        <div class="step-card">
-            <h3 style="color:var(--accent-purple); margin-bottom:1rem;">02. Localized Input</h3>
-            <p style="color:var(--text-dim);">Standard keyboards send your keystrokes to the cloud for "prediction." Use <strong>FUTO Keyboard</strong> for localized voice-to-text that never leaves your device.</p>
-            <div class="image-placeholder">Screen: FUTO Keyboard Offline Voice-to-Text Model loading</div>
-        </div>
-        <a href="privacy-hardening.html" style="color:var(--accent-purple); text-decoration:none; font-weight:bold;">← Back to Privacy</a>
-    </main>
+    </div>
 </body>
 </html>
