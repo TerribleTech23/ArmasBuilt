@@ -6,23 +6,22 @@
     <title>Guides | ArmasBuilt Electronics Restoration</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* This ensures the header height matches exactly and the colors sync */
-        .mobile-break { display: none; }
-        @media (max-width: 768px) {
-            .mobile-break { display: inline; }
+        /* Ensures the header height matches the other pages exactly */
+        .mobile-break {
+            display: none;
         }
 
-        /* Syncing the section title color with the Home and Store pages */
-        .guides-title {
-            color: #a855f7 !important; /* The ArmasBuilt Purple */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-            border-top: 1px solid rgba(168, 85, 247, 0.2);
-            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
-            padding: 10px 0;
-            margin: 20px 0;
-            text-align: center;
+        @media (max-width: 768px) {
+            .mobile-break {
+                display: inline;
+            }
+        }
+
+        /* Forces the Card Titles to be Purple while keeping the main Section Title Red */
+        .card h3 {
+            color: #a855f7 !important;
+            margin: 10px 0;
+            text-transform: none; /* Keeps them looking like proper titles */
         }
     </style>
 </head>
@@ -42,33 +41,33 @@
         </header>
 
         <main>
-            <div class="guides-title">Technical Archives</div>
+            <div class="section-title">Technical Archives</div>
 
             <div class="grid" style="margin-top: 30px;">
                 <article class="card">
                     <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Tools</div>
-                    <h3 style="color: #ef4444;">The Stack</h3>
+                    <h3>The Stack</h3>
                     <p>The essential software toolkit I use for mobile development, terminal environments, and digital automation.</p>
                     <a href="apps.html" class="status-badge" style="text-decoration: none; display: inline-block;">Explore Stack</a>
                 </article>
 
                 <article class="card">
                     <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Defense</div>
-                    <h3 style="color: #ef4444;">Hardening</h3>
+                    <h3>Hardening</h3>
                     <p>Comprehensive strategies for private communication, identity security, and network fortification.</p>
                     <a href="privacy-hardening.html" class="status-badge" style="text-decoration: none; display: inline-block;">Secure Your Life</a>
                 </article>
 
                 <article class="card">
                     <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Infrastructure</div>
-                    <h3 style="color: #ef4444;">Home Lab</h3>
+                    <h3>Home Lab</h3>
                     <p>Walkthroughs for media automation, remote networking via Tailscale, and self-hosted backups.</p>
                     <a href="guides.html" class="status-badge" style="text-decoration: none; display: inline-block;">Build Something</a>
                 </article>
 
                 <article class="card">
                     <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Archives</div>
-                    <h3 style="color: #ef4444;">The Vault</h3>
+                    <h3>The Vault</h3>
                     <p>A curated collection of independent media tools, hardened players, and library management software.</p>
                     <a href="thevault.html" class="status-badge" style="text-decoration: none; display: inline-block;">Enter Vault</a>
                 </article>
