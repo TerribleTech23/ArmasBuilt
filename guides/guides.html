@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guides | ArmasBuilt Electronics Restoration</title>
+    <title>Home Lab | ArmasBuilt Technical Archives</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* Mobile Jump Fix */
+        /* Mobile Jump Fix & Smart Break */
         .mobile-break { display: none; }
         @media (max-width: 768px) {
             .mobile-break { display: inline; }
         }
 
-        /* The Main Section Title - STAYS RED */
+        /* Syncing the Card Titles to Purple to match your new Guides Index */
+        .card h3 {
+            color: #a855f7 !important;
+            margin: 10px 0;
+        }
+
+        /* Ensuring the main title matches the Red Archive style */
         .guides-title {
             color: #ef4444 !important; 
             text-transform: uppercase;
@@ -24,12 +30,6 @@
             margin: 20px 0;
             text-align: center;
         }
-
-        /* The Card Titles - TURNED PURPLE */
-        .card h3 {
-            color: #a855f7 !important;
-            margin: 10px 0;
-        }
     </style>
 </head>
 <body>
@@ -37,6 +37,7 @@
         <header>
             <img src="../armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
             <h1>Armas&bull;Built</h1>
+            
             <p class="tagline">Privacy. Security.<span class="mobile-break"><br></span>Sovereignty.</p>
             
             <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
@@ -47,41 +48,41 @@
         </header>
 
         <main>
-            <div class="guides-title">Technical Archives</div>
+            <div class="guides-title">Home Lab</div>
 
             <div class="grid" style="margin-top: 30px;">
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Tools</div>
-                    <h3>The Stack</h3>
-                    <p>The essential software toolkit I use for mobile development, terminal environments, and digital automation.</p>
-                    <a href="apps.html" class="status-badge" style="text-decoration: none; display: inline-block;">Explore Stack</a>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Network</div>
+                    <h3>Tailscale Exit Node</h3>
+                    <p>Using your home network as a secure mobile gateway anywhere in the world.</p>
+                    <a href="tailscale.html" class="status-badge" style="text-decoration: none; display: inline-block;">Read Guide</a>
                 </article>
 
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Defense</div>
-                    <h3>Hardening</h3>
-                    <p>Comprehensive strategies for private communication, identity security, and network fortification.</p>
-                    <a href="privacy-hardening.html" class="status-badge" style="text-decoration: none; display: inline-block;">Secure Your Life</a>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Media</div>
+                    <h3>Stremio + Debrid</h3>
+                    <p>The ultimate setup for buffer-free 4K media streaming via Real-Debrid.</p>
+                    <a href="stremio.html" class="status-badge" style="text-decoration: none; display: inline-block;">Read Guide</a>
                 </article>
-
+                
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Infrastructure</div>
-                    <h3>Home Lab</h3>
-                    <p>Walkthroughs for media automation, remote networking via Tailscale, and self-hosted backups.</p>
-                    <a href="guides.html" class="status-badge" style="text-decoration: none; display: inline-block;">Build Something</a>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Self-Host</div>
+                    <h3>Immich Backup</h3>
+                    <p>Self-hosting a Google Photos replacement on a dedicated server or NAS.</p>
+                    <a href="Immich.html" class="status-badge" style="text-decoration: none; display: inline-block;">Read Guide</a>
                 </article>
-
+                
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Archives</div>
-                    <h3>The Vault</h3>
-                    <p>A curated collection of independent media tools, hardened players, and library management software.</p>
-                    <a href="thevault.html" class="status-badge" style="text-decoration: none; display: inline-block;">Enter Vault</a>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Media</div>
+                    <h3>YouTube Morphe</h3>
+                    <p>Hardening your mobile YouTube experience with background play and ad-blocking.</p>
+                    <a href="YtMorphe.html" class="status-badge" style="text-decoration: none; display: inline-block;">Read Guide</a>
                 </article>
             </div>
         </main>
 
         <div class="footer" style="margin-top: 50px;">
-            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Restoration & Refurbishment Services.</p>
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Privacy. Security. Sovereignty.</p>
         </div>
     </div>
 </body>
