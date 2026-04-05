@@ -6,15 +6,23 @@
     <title>Guides | ArmasBuilt Electronics Restoration</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* Ensures the header height matches the other pages exactly */
-        .mobile-break {
-            display: none;
+        /* This ensures the header height matches exactly and the colors sync */
+        .mobile-break { display: none; }
+        @media (max-width: 768px) {
+            .mobile-break { display: inline; }
         }
 
-        @media (max-width: 768px) {
-            .mobile-break {
-                display: inline;
-            }
+        /* Syncing the section title color with the Home and Store pages */
+        .guides-title {
+            color: #a855f7 !important; /* The ArmasBuilt Purple */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            border-top: 1px solid rgba(168, 85, 247, 0.2);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 10px 0;
+            margin: 20px 0;
+            text-align: center;
         }
     </style>
 </head>
@@ -34,7 +42,7 @@
         </header>
 
         <main>
-            <div class="section-title">Technical Archives</div>
+            <div class="guides-title">Technical Archives</div>
 
             <div class="grid" style="margin-top: 30px;">
                 <article class="card">
