@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only dark">
+    <title>Immich Self-Hosting Guide | TerribleTech</title>
+    <style>
+        /* --- General Theme Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-purple: #8b5cf6; 
+            --accent-green: #22c55e;
+            --accent-blue: #38bdf8;
+            color-scheme: only dark;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- EXACT MATCH TO STREMIO GUIDE --- */
+        header {
+            background: var(--card-bg); 
+            padding: 0.5rem 1rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            border-bottom: 2px solid var(--accent-purple); 
+            min-height: 60px; 
+            display: flex; 
+            align-items: center;
+        }
+
+        nav { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            gap: 0.4rem; 
+        } 
+        @media (min-width: 768px) { nav { flex-direction: row; justify-content: space-between; gap: 0; } }
+
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.2rem; 
+            background: linear-gradient(to right, #fff, var(--accent-purple)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            text-decoration: none; 
+        }
+        .logo span { -webkit-text-fill-color: var(--accent-purple); font-weight: 900; }
+
+        .header-tagline { 
+            font-size: 0.65rem; 
+            color: var(--text-dim); 
+            text-transform: uppercase; 
+            letter-spacing: 1.2px; 
+            font-weight: 600; 
+            margin-bottom: 2px; 
+        }
+
+        nav ul { display: flex; list-style: none; gap: 0.4rem; flex-wrap: wrap; justify-content: center; row-gap: 0.4rem; }
+        nav a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            padding: 0.4rem 0.8rem; 
+            border-radius: 8px; 
+            background: rgba(255, 255, 255, 0.04); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            display: inline-block; 
+        }
+        nav a:hover { color: var(--text-main); background: rgba(139, 92, 246, 0.15); border-color: var(--accent-purple); }
+
+        /* --- CONTENT AREA SPACING FIX --- */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem; /* Reduced padding to match Stremio exactly */
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--card-bg);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.8rem;
+        }
+
+        p { margin-bottom: 1.2rem; color: var(--text-dim); }
+
+        .note {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid var(--accent-purple);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            color: var(--text-dim);
+        }
+
+        .step { margin-bottom: 2rem; background: var(--card-bg); border: 1px solid #334155; padding: 2rem; border-radius: 12px; }
+        .step-number { color: var(--accent-purple); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 0.5rem; }
+
+        pre {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        code { color: var(--accent-green); font-family: monospace; }
+
+        .btn-back { display: inline-block; margin-top: 2rem; color: var(--accent-purple); text-decoration: none; font-weight: bold; }
+
+        footer { text-align: center; padding: 4rem 2rem; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid #1e293b; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">TerribleTech<span>.io</span></a>
+            <div class="header-tagline">Privacy. Security. Sovereignty.</div>
+            <ul>
+                <li><a href="apps.html">The Stack</a></li>
+                <li><a href="privacy-hardening.html">Hardening</a></li>
+                <li><a href="guides.html">Home Lab</a></li>
+                <li><a href="thevault.html">The Vault</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Immich Self-Hosting Guide</h1>
+        <p style="text-align:center;">Take control of your memories. This guide will walk you through setting up Immich on a dedicated server.</p>
+
+        <div class="note">
+            <strong>Important Note:</strong> This guide assumes you have a dedicated server running Docker. The Flint 2 router does NOT support Docker.
+        </div>
+
+        <h2>Step-by-Step Installation</h2>
+
+        <div class="step">
+            <span class="step-number">Step 01</span>
+            <h3>Update and Install Git</h3>
+            <p>Ensure your server's package list is up-to-date:</p>
+            <pre><code>sudo apt update && sudo apt upgrade -y
+sudo apt install git -y</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-number">Step 02</span>
+            <h3>Clone Repository</h3>
+            <p>Download the Immich configuration files:</p>
+            <pre><code>cd /opt
+git clone https://github.com/immich-app/immich-docs.git
+cd immich-docs/install</code></pre>
+        </div>
+
+        <div class="step">
+            <span class="step-number">Step 03</span>
+            <h3>Start Immich</h3>
+            <p>Launch the containers in detached mode:</p>
+            <pre><code>docker compose up -d</code></pre>
+        </div>
+
+        <a href="guides.html" class="btn-back">← Back to Guides</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TerribleTech.io | Digital Excellence.</p>
+    </footer>
+
+</body>
+</html>
