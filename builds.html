@@ -9,171 +9,185 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .builds-container {
-            max-width: 900px;
+        /* This ensures the builds page matches your specific ArmasBuilt "Card" vibe */
+        .portfolio-container {
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            font-family: sans-serif; /* Adjust if you use a specific font */
+            text-align: center;
         }
 
-        .project-section {
-            background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent box for readability */
-            margin-bottom: 30px;
+        .section-title {
+            color: #ff00ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 40px 0 20px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 0, 255, 0.3);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Matches the glowing boxes from your video */
+        .build-card {
+            background: rgba(20, 0, 30, 0.8);
+            border: 2px solid #8a2be2;
+            border-radius: 15px;
             padding: 25px;
-            border-radius: 12px;
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            backdrop-filter: blur(5px); /* Smooths out the circuit background behind text */
+            margin-bottom: 30px;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
         }
 
-        .project-section h2 {
+        .build-card h3 {
             color: #ff00ff;
             margin-top: 0;
-            border-bottom: 2px solid #8a2be2;
-            padding-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 1.4rem;
         }
 
-        .skill-tags {
-            margin-top: 15px;
+        .build-card p {
+            color: #ddd;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* The "Skill Tags" designed to look like your site's buttons */
+        .tag-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            margin-top: 15px;
         }
 
-        .skill-tags span {
-            background: rgba(138, 43, 226, 0.3);
+        .skill-tag {
             border: 1px solid #ff00ff;
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            color: #ff00ff;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .image-box {
+            margin-top: 20px;
+            border: 1px dashed rgba(255, 0, 255, 0.5);
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #888;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Certifications List */
+        .cert-list {
+            list-style: none;
+            padding: 0;
+            color: #00ffff;
             font-weight: bold;
         }
 
-        .project-media {
-            margin-top: 20px;
-            border: 2px dashed #ff00ff;
-            padding: 20px;
-            text-align: center;
-            color: #aaa;
-            border-radius: 8px;
+        .cert-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
         }
 
-        .cert-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+        .cert-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff00ff;
         }
 
-        @media (max-width: 600px) {
-            .cert-grid { grid-template-columns: 1fr; }
-        }
-
-        .cert-column h3 {
-            color: #00ffff;
-            font-size: 1.1rem;
-        }
-
-        .portfolio-footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #888;
+        .footer-text {
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.8rem;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <main class="builds-container">
-
-        <header style="text-align: center; margin-bottom: 50px;">
-            <h1 style="color: #ff00ff; font-size: 2.5rem; margin-bottom: 5px;">TECHNICAL PORTFOLIO</h1>
-            <p style="color: #00ffff; letter-spacing: 1px;">PRECISION ASSEMBLY • SYSTEMS ARCHITECTURE</p>
+    <div class="portfolio-container">
+        
+        <header>
+            <h1 style="color: #ff00ff; font-size: 2.8rem; margin-bottom: 0;">ARMAS•BUILT</h1>
+            <p style="color: #8a2be2; font-weight: bold; letter-spacing: 2px;">TECHNICAL PORTFOLIO</p>
         </header>
 
-        <section class="project-section">
-            <h2>01. Digital Infrastructure</h2>
-            <div class="project-info">
-                <h3>Secure Network Gateway (Flint 2 / Tailscale)</h3>
-                <p>Architecture of a central home privacy gateway. Integrated AdGuard Home for network-wide DNS filtering and Tailscale for secure, encrypted remote access using split-tunneling and exit node configurations.</p>
-                <div class="skill-tags">
-                    <span>DNS REWRITES</span><span>VPN TUNNELING</span><span>NETWORK SECURITY</span>
-                </div>
+        <h2 class="section-title">01. Digital Systems</h2>
+        
+        <div class="build-card">
+            <h3>Secure Network Gateway</h3>
+            <p>Architecture of a central home privacy gateway utilizing a Flint 2 router. Configured with AdGuard Home for DNS-level security and Tailscale for encrypted remote access via split-tunneling.</p>
+            <div class="tag-container">
+                <span class="skill-tag">DNS Security</span>
+                <span class="skill-tag">VPN Arch</span>
+                <span class="skill-tag">Network Logic</span>
             </div>
-            <div class="project-media">
-                [PHOTO: AdGuard Dashboard or Tailscale Admin Panel]
-            </div>
-        </section>
+            <div class="image-box">[ ADGUARD / TAILSCALE DASHBOARD PHOTO ]</div>
+        </div>
 
-        <section class="project-section">
-            <h2>02. Electromechanical Assembly</h2>
-            <div class="project-info">
-                <h3>2003 Dodge Dakota Suspension Overhaul</h3>
-                <p>Total refresh of front-end steering and suspension. Component-level replacement of upper/lower ball joints, tie rods, and sway bar links. Focused on precision torque application and factory-spec alignment prep.</p>
-                <div class="skill-tags">
-                    <span>PRECISION ASSEMBLY</span><span>COMPONENT DIAGNOSIS</span><span>TORQUE SPECS</span>
-                </div>
-            </div>
-            <div class="project-media">
-                [PHOTO: Suspension Components - Dodge Dakota]
-            </div>
-        </section>
+        <h2 class="section-title">02. Mechanical Systems</h2>
 
-        <section class="project-section">
-            <h2>03. HVAC & Thermal Systems</h2>
-            <div class="project-info">
-                <h3>Residential HVAC Maintenance & Repair</h3>
-                <p>Diagnostic testing and maintenance of heating and cooling systems. Experience with ductwork integrity, component troubleshooting (capacitors/contactors), and airflow optimization.</p>
-                <div class="skill-tags">
-                    <span>SYSTEM DIAGNOSTICS</span><span>THERMAL MANAGEMENT</span><span>AIRFLOW LOGIC</span>
-                </div>
+        <div class="build-card">
+            <h3>Dodge Dakota Suspension Refresh</h3>
+            <p>Full-scale steering and suspension overhaul for a 2003 Dodge Dakota. Precision installation of upper/lower ball joints, tie rods, and sway bar links to factory-spec torque tolerances.</p>
+            <div class="tag-container">
+                <span class="skill-tag">Precision Assembly</span>
+                <span class="skill-tag">Diagnosis</span>
+                <span class="skill-tag">Torque Specs</span>
             </div>
-            <div class="project-media">
-                [PHOTO: HVAC Unit/Ducting Maintenance]
-            </div>
-        </section>
+            <div class="image-box">[ SUSPENSION BUILD PHOTO ]</div>
+        </div>
 
-        <section class="project-section">
-            <h2>04. Structural & Plumbing</h2>
-            <div class="project-info">
-                <h3>Subfloor Restoration & Precision Fixtures</h3>
-                <p>Structural leveling and reinforcement of subfloor systems prior to finish. Installation of matte-black waterfall plumbing fixtures with a focus on custom routing and leak-prevention seals.</p>
-                <div class="skill-tags">
-                    <span>STRUCTURAL PREP</span><span>FIXTURE INTEGRATION</span><span>QC TESTING</span>
-                </div>
+        <div class="build-card">
+            <h3>HVAC Infrastructure</h3>
+            <p>Component-level diagnostics and maintenance of residential climate systems. Specialized in thermal management, electrical troubleshooting, and airflow optimization.</p>
+            <div class="tag-container">
+                <span class="skill-tag">Diagnostics</span>
+                <span class="skill-tag">Thermal Management</span>
             </div>
-            <div class="project-media">
-                [PHOTO: Subfloor Prep / Waterfall Faucet]
+            <div class="image-box">[ HVAC SYSTEM PHOTO ]</div>
+        </div>
+
+        <h2 class="section-title">03. Physical Infrastructure</h2>
+
+        <div class="build-card">
+            <h3>Structural Subfloor Restoration</h3>
+            <p>Engineered subfloor leveling and reinforcement. Installed custom waterfall plumbing fixtures with high-pressure seal testing and precision routing.</p>
+            <div class="tag-container">
+                <span class="skill-tag">Structural Prep</span>
+                <span class="skill-tag">Fluid Systems</span>
             </div>
-        </section>
+            <div class="image-box">[ SUBFLOOR / PLUMBING PHOTO ]</div>
+        </div>
 
-        <section class="project-section">
-            <h2>05. Professional Credentials</h2>
-            <div class="cert-grid">
-                <div class="cert-column">
-                    <h3>Current Certifications</h3>
-                    <ul style="color: #fff; line-height: 1.6;">
-                        <li><strong>Micro-Soldering:</strong> Precision PCB repair.</li>
-                        <li><strong>Multimeter (DMM):</strong> Circuit diagnostics.</li>
-                        <li><strong>First Aid / CPR / AED:</strong> OSHA Safety.</li>
-                    </ul>
-                </div>
-                <div class="cert-column">
-                    <h3>In Progress</h3>
-                    <ul style="color: #fff; line-height: 1.6;">
-                        <li><strong>CompTIA Trifecta:</strong> A+, Net+, Sec+.</li>
-                        <li><strong>Google IT Support:</strong> Professional Cert.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <h2 class="section-title">04. Credentials</h2>
 
-        <footer class="portfolio-footer">
-            <p>High-resolution documentation available upon request.</p>
-            <p><strong>tony@armasbuilt.com</strong></p>
-        </footer>
+        <div class="build-card">
+            <h3 style="color: #00ffff;">Active Certifications</h3>
+            <ul class="cert-list">
+                <li>Micro-Soldering & Board Repair</li>
+                <li>Digital Multimeter (DMM) Diagnostics</li>
+                <li>First Aid / CPR / AED Certified</li>
+            </ul>
+            
+            <h3 style="color: #8a2be2; margin-top: 20px;">Current Development</h3>
+            <ul class="cert-list" style="color: #aaa;">
+                <li>CompTIA Trifecta (A+, Net+, Sec+)</li>
+                <li>Google IT Support Professional</li>
+            </ul>
+        </div>
 
-    </main>
+        <p class="footer-text">
+            Reference documentation and high-resolution build logs available upon request.<br>
+            Contact: tony@armasbuilt.com
+        </p>
+
+    </div>
 
 </body>
 </html>
