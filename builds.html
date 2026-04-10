@@ -3,121 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArmasBuilt | Projects & Builds</title>
+    <title>Technical Portfolio | ArmasBuilt</title>
+    <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* This forces the background and layout to stay dark even if the CSS file fails */
-        body {
-            background-color: #0a050f !important;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            color: #f3e8ff;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .section-title {
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: #dc2626;
-            margin: 60px 0 20px;
-        }
-        .build-card {
-            background: rgba(26, 11, 22, 0.9);
-            border: 1px solid rgba(147, 51, 234, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-        }
-        .build-card h3 {
-            color: #9333ea;
-            margin-top: 0;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            font-weight: 900;
-        }
-        .tag-container {
+        /* Portfolio Specific Styling using your index variables */
+        .project-meta {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
-            margin: 20px 0;
+            gap: 10px;
+            margin-top: 15px;
         }
+
         .tag {
-            border: 1px solid #9333ea;
-            color: #9333ea;
-            padding: 5px 12px;
             font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            color: var(--accent-red);
+            border: 1px solid var(--accent-red);
+            padding: 3px 10px;
             border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
-        .photo-placeholder {
+
+        .build-img-placeholder {
+            width: 100%;
+            height: 250px;
             background: rgba(0, 0, 0, 0.4);
-            border: 1px dashed rgba(147, 51, 234, 0.2);
-            height: 200px;
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
-            color: rgba(243, 232, 255, 0.3);
+            color: var(--accent-purple);
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.8rem;
         }
-        nav a {
-            color: #a855f7;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .cert-grid { grid-template-columns: 1fr; }
+        }
+
+        .build-card {
+            margin-bottom: 30px;
+        }
+        
+        .build-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header style="text-align: center; margin-bottom: 50px;">
-            <h1 style="font-size: 3rem; text-transform: uppercase; font-weight: 900; background: linear-gradient(to right, #dc2626, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">ARMAS&bull;BUILT</h1>
-            <nav style="margin-top: 20px;">
-                <a href="index.html">Home</a>
-                <a href="store.html">Store</a>
-                <a href="standard.html">The Standard</a>
-                <a href="guides/index.html">Guides</a>
+        <header>
+            <img src="armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
+            <h1>Armas&bull;Built</h1>
+            <p class="tagline">Technical Build Portfolio</p>
+            
+            <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
+                <a href="index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">Home</a>
+                <a href="store.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">Store</a>
+                <a href="standard.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">The Standard</a>
+                <a href="guides/index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">Guides</a>
             </nav>
         </header>
 
-        <div class="section-title">01. Digital Systems</div>
-        <div class="build-card">
-            <h3>Secure Network Gateway</h3>
-            <p>Architecture of a central home privacy gateway utilizing a Flint 2 router. Configured with AdGuard Home for DNS-level security and Tailscale for encrypted remote access via split-tunneling.</p>
-            <div class="tag-container">
-                <div class="tag">DNS Security</div>
-                <div class="tag">VPN Arch</div>
-                <div class="tag">Network Logic</div>
+        <div class="section-title">Systems & Infrastructure</div>
+        
+        <div class="grid">
+            <div class="card build-card">
+                <h3>01. Network Architecture</h3>
+                <p>Deployment of a Flint 2 gateway featuring network-wide AdGuard DNS filtering and Tailscale split-tunneling for secure remote management.</p>
+                <div class="project-meta">
+                    <span class="tag">Security</span>
+                    <span class="tag">Networking</span>
+                </div>
+                <div class="build-img-placeholder">[ AdGuard / Tailscale Dashboard ]</div>
             </div>
-            <div class="photo-placeholder">[ AdGuard / Tailscale Dashboard Photo ]</div>
+
+            <div class="card build-card">
+                <h3>02. Mechanical Assembly</h3>
+                <p>Full-scale steering and suspension refresh on a 2003 Dodge Dakota. Component replacement including ball joints and tie rods to OEM torque specifications.</p>
+                <div class="project-meta">
+                    <span class="tag">Suspension</span>
+                    <span class="tag">Precision</span>
+                </div>
+                <div class="build-img-placeholder">[ Dodge Dakota Suspension Build ]</div>
+            </div>
+
+            <div class="card build-card">
+                <h3>03. HVAC & Thermal Control</h3>
+                <p>Diagnostics and maintenance of residential climate systems, focusing on electrical troubleshooting and airflow optimization.</p>
+                <div class="project-meta">
+                    <span class="tag">Thermal</span>
+                    <span class="tag">Diagnostics</span>
+                </div>
+                <div class="build-img-placeholder">[ HVAC Service Documentation ]</div>
+            </div>
+
+            <div class="card build-card">
+                <h3>04. Structural Restoration</h3>
+                <p>Precision subfloor leveling and structural reinforcement. Custom installation of waterfall plumbing systems with high-pressure leak testing.</p>
+                <div class="project-meta">
+                    <span class="tag">Structural</span>
+                    <span class="tag">Plumbing</span>
+                </div>
+                <div class="build-img-placeholder">[ Subfloor / Fixture Build ]</div>
+            </div>
         </div>
 
-        <div class="section-title">02. Mechanical Systems</div>
-        <div class="build-card">
-            <h3>Dodge Dakota Suspension Refresh</h3>
-            <p>Full-scale steering and suspension overhaul for a 2003 Dodge Dakota. Precision installation of upper/lower ball joints, tie rods, and sway bar links to factory-spec torque tolerances.</p>
-            <div class="tag-container">
-                <div class="tag">Precision Assembly</div>
-                <div class="tag">Diagnosis</div>
-                <div class="tag">Torque Specs</div>
+        <div class="section-title">Credentials & Training</div>
+        
+        <div class="cert-grid">
+            <div class="card">
+                <h3 style="font-size: 1rem; color: var(--accent-red);">Active Certifications</h3>
+                <ul style="font-size: 0.85rem;">
+                    <li><strong>Micro-Soldering:</strong> PCB Repair</li>
+                    <li><strong>Multimeter (DMM):</strong> Diagnostics</li>
+                    <li><strong>Safety:</strong> First Aid / CPR / AED</li>
+                </ul>
             </div>
-            <div class="photo-placeholder">[ Suspension Build Photo ]</div>
+            <div class="card">
+                <h3 style="font-size: 1rem; color: var(--accent-purple);">Development</h3>
+                <ul style="font-size: 0.85rem; opacity: 0.6;">
+                    <li>CompTIA Trifecta (Active)</li>
+                    <li>Google IT Professional (Active)</li>
+                </ul>
+            </div>
         </div>
 
-        <footer style="text-align: center; margin-top: 100px; opacity: 0.5; font-size: 0.8rem;">
-            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.</p>
-        </footer>
+        <div class="footer">
+            <p>Full reference documentation and high-resolution logs available upon request.<br>
+            &copy; 2026 ArmasBuilt. Sacramento, CA.</p>
+        </div>
     </div>
 </body>
 </html>
