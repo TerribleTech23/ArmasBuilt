@@ -1,193 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Technical Portfolio | ArmasBuilt</title>
-    
-    <link rel="stylesheet" href="style.css">
+<div class="section-title" style="color: #dc2626; text-align: center; text-transform: uppercase; letter-spacing: 3px; margin: 40px 0 20px;">01. Digital Systems</div>
 
-    <style>
-        /* This ensures the builds page matches your specific ArmasBuilt "Card" vibe */
-        .portfolio-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            color: #ff00ff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 40px 0 20px;
-            font-size: 1.2rem;
-            border-bottom: 1px solid rgba(255, 0, 255, 0.3);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        /* Matches the glowing boxes from your video */
-        .build-card {
-            background: rgba(20, 0, 30, 0.8);
-            border: 2px solid #8a2be2;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 30px;
-            text-align: left;
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.2);
-        }
-
-        .build-card h3 {
-            color: #ff00ff;
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        .build-card p {
-            color: #ddd;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* The "Skill Tags" designed to look like your site's buttons */
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .skill-tag {
-            border: 1px solid #ff00ff;
-            color: #ff00ff;
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .image-box {
-            margin-top: 20px;
-            border: 1px dashed rgba(255, 0, 255, 0.5);
-            border-radius: 10px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #888;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        /* Certifications List */
-        .cert-list {
-            list-style: none;
-            padding: 0;
-            color: #00ffff;
-            font-weight: bold;
-        }
-
-        .cert-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .cert-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #ff00ff;
-        }
-
-        .footer-text {
-            margin-top: 50px;
-            color: #666;
-            font-size: 0.8rem;
-            font-style: italic;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="portfolio-container">
+<div class="grid" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+    <div class="card" style="background: rgba(26, 11, 22, 0.75); border: 1px solid rgba(147, 51, 234, 0.2); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);">
+        <h3 style="color: #9333ea; margin-top: 0; font-size: 1.5rem; text-transform: uppercase;">Secure Network Gateway</h3>
+        <p style="color: #f3e8ff; opacity: 0.9; margin-bottom: 20px;">Architecture of a central home privacy gateway utilizing a Flint 2 router. Configured with AdGuard Home for DNS-level security and Tailscale for encrypted remote access via split-tunneling.</p>
         
-        <header>
-            <h1 style="color: #ff00ff; font-size: 2.8rem; margin-bottom: 0;">ARMAS•BUILT</h1>
-            <p style="color: #8a2be2; font-weight: bold; letter-spacing: 2px;">TECHNICAL PORTFOLIO</p>
-        </header>
-
-        <h2 class="section-title">01. Digital Systems</h2>
-        
-        <div class="build-card">
-            <h3>Secure Network Gateway</h3>
-            <p>Architecture of a central home privacy gateway utilizing a Flint 2 router. Configured with AdGuard Home for DNS-level security and Tailscale for encrypted remote access via split-tunneling.</p>
-            <div class="tag-container">
-                <span class="skill-tag">DNS Security</span>
-                <span class="skill-tag">VPN Arch</span>
-                <span class="skill-tag">Network Logic</span>
-            </div>
-            <div class="image-box">[ ADGUARD / TAILSCALE DASHBOARD PHOTO ]</div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">DNS Security</span>
+            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">VPN Arch</span>
+            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Network Logic</span>
         </div>
 
-        <h2 class="section-title">02. Mechanical Systems</h2>
-
-        <div class="build-card">
-            <h3>Dodge Dakota Suspension Refresh</h3>
-            <p>Full-scale steering and suspension overhaul for a 2003 Dodge Dakota. Precision installation of upper/lower ball joints, tie rods, and sway bar links to factory-spec torque tolerances.</p>
-            <div class="tag-container">
-                <span class="skill-tag">Precision Assembly</span>
-                <span class="skill-tag">Diagnosis</span>
-                <span class="skill-tag">Torque Specs</span>
-            </div>
-            <div class="image-box">[ SUSPENSION BUILD PHOTO ]</div>
+        <div style="background: rgba(0,0,0,0.3); border: 1px dashed rgba(147, 51, 234, 0.3); margin-top: 20px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: rgba(243, 232, 255, 0.4); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">
+            [ AdGuard / Tailscale Dashboard Photo ]
         </div>
-
-        <div class="build-card">
-            <h3>HVAC Infrastructure</h3>
-            <p>Component-level diagnostics and maintenance of residential climate systems. Specialized in thermal management, electrical troubleshooting, and airflow optimization.</p>
-            <div class="tag-container">
-                <span class="skill-tag">Diagnostics</span>
-                <span class="skill-tag">Thermal Management</span>
-            </div>
-            <div class="image-box">[ HVAC SYSTEM PHOTO ]</div>
-        </div>
-
-        <h2 class="section-title">03. Physical Infrastructure</h2>
-
-        <div class="build-card">
-            <h3>Structural Subfloor Restoration</h3>
-            <p>Engineered subfloor leveling and reinforcement. Installed custom waterfall plumbing fixtures with high-pressure seal testing and precision routing.</p>
-            <div class="tag-container">
-                <span class="skill-tag">Structural Prep</span>
-                <span class="skill-tag">Fluid Systems</span>
-            </div>
-            <div class="image-box">[ SUBFLOOR / PLUMBING PHOTO ]</div>
-        </div>
-
-        <h2 class="section-title">04. Credentials</h2>
-
-        <div class="build-card">
-            <h3 style="color: #00ffff;">Active Certifications</h3>
-            <ul class="cert-list">
-                <li>Micro-Soldering & Board Repair</li>
-                <li>Digital Multimeter (DMM) Diagnostics</li>
-                <li>First Aid / CPR / AED Certified</li>
-            </ul>
-            
-            <h3 style="color: #8a2be2; margin-top: 20px;">Current Development</h3>
-            <ul class="cert-list" style="color: #aaa;">
-                <li>CompTIA Trifecta (A+, Net+, Sec+)</li>
-                <li>Google IT Support Professional</li>
-            </ul>
-        </div>
-
-        <p class="footer-text">
-            Reference documentation and high-resolution build logs available upon request.<br>
-            Contact: tony@armasbuilt.com
-        </p>
-
     </div>
+</div>
 
-</body>
-</html>
+<div class="section-title" style="color: #dc2626; text-align: center; text-transform: uppercase; letter-spacing: 3px; margin: 40px 0 20px;">02. Mechanical Systems</div>
+
+<div class="grid" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+    <div class="card" style="background: rgba(26, 11, 22, 0.75); border: 1px solid rgba(147, 51, 234, 0.2); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);">
+        <h3 style="color: #9333ea; margin-top: 0; font-size: 1.5rem; text-transform: uppercase;">Dodge Dakota Suspension Refresh</h3>
+        <p style="color: #f3e8ff; opacity: 0.9; margin-bottom: 20px;">Full-scale steering and suspension overhaul for a 2003 Dodge Dakota. Precision installation of upper/lower ball joints, tie rods, and sway bar links to factory-spec torque tolerances.</p>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Precision Assembly</span>
+            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Diagnosis</span>
+            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Torque Specs</span>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.3); border: 1px dashed rgba(147, 51, 234, 0.3); margin-top: 20px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: rgba(243, 232, 255, 0.4); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">
+            [ Suspension Build Photo ]
+        </div>
+    </div>
+</div>
