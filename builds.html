@@ -1,37 +1,123 @@
-<div class="section-title" style="color: #dc2626; text-align: center; text-transform: uppercase; letter-spacing: 3px; margin: 40px 0 20px;">01. Digital Systems</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmasBuilt | Projects & Builds</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* This forces the background and layout to stay dark even if the CSS file fails */
+        body {
+            background-color: #0a050f !important;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: #f3e8ff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .section-title {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: #dc2626;
+            margin: 60px 0 20px;
+        }
+        .build-card {
+            background: rgba(26, 11, 22, 0.9);
+            border: 1px solid rgba(147, 51, 234, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .build-card h3 {
+            color: #9333ea;
+            margin-top: 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .tag-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .tag {
+            border: 1px solid #9333ea;
+            color: #9333ea;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+        .photo-placeholder {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px dashed rgba(147, 51, 234, 0.2);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: rgba(243, 232, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+        nav a {
+            color: #a855f7;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 style="font-size: 3rem; text-transform: uppercase; font-weight: 900; background: linear-gradient(to right, #dc2626, #9333ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0;">ARMAS&bull;BUILT</h1>
+            <nav style="margin-top: 20px;">
+                <a href="index.html">Home</a>
+                <a href="store.html">Store</a>
+                <a href="standard.html">The Standard</a>
+                <a href="guides/index.html">Guides</a>
+            </nav>
+        </header>
 
-<div class="grid" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-    <div class="card" style="background: rgba(26, 11, 22, 0.75); border: 1px solid rgba(147, 51, 234, 0.2); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);">
-        <h3 style="color: #9333ea; margin-top: 0; font-size: 1.5rem; text-transform: uppercase;">Secure Network Gateway</h3>
-        <p style="color: #f3e8ff; opacity: 0.9; margin-bottom: 20px;">Architecture of a central home privacy gateway utilizing a Flint 2 router. Configured with AdGuard Home for DNS-level security and Tailscale for encrypted remote access via split-tunneling.</p>
-        
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">DNS Security</span>
-            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">VPN Arch</span>
-            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Network Logic</span>
+        <div class="section-title">01. Digital Systems</div>
+        <div class="build-card">
+            <h3>Secure Network Gateway</h3>
+            <p>Architecture of a central home privacy gateway utilizing a Flint 2 router. Configured with AdGuard Home for DNS-level security and Tailscale for encrypted remote access via split-tunneling.</p>
+            <div class="tag-container">
+                <div class="tag">DNS Security</div>
+                <div class="tag">VPN Arch</div>
+                <div class="tag">Network Logic</div>
+            </div>
+            <div class="photo-placeholder">[ AdGuard / Tailscale Dashboard Photo ]</div>
         </div>
 
-        <div style="background: rgba(0,0,0,0.3); border: 1px dashed rgba(147, 51, 234, 0.3); margin-top: 20px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: rgba(243, 232, 255, 0.4); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">
-            [ AdGuard / Tailscale Dashboard Photo ]
+        <div class="section-title">02. Mechanical Systems</div>
+        <div class="build-card">
+            <h3>Dodge Dakota Suspension Refresh</h3>
+            <p>Full-scale steering and suspension overhaul for a 2003 Dodge Dakota. Precision installation of upper/lower ball joints, tie rods, and sway bar links to factory-spec torque tolerances.</p>
+            <div class="tag-container">
+                <div class="tag">Precision Assembly</div>
+                <div class="tag">Diagnosis</div>
+                <div class="tag">Torque Specs</div>
+            </div>
+            <div class="photo-placeholder">[ Suspension Build Photo ]</div>
         </div>
+
+        <footer style="text-align: center; margin-top: 100px; opacity: 0.5; font-size: 0.8rem;">
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.</p>
+        </footer>
     </div>
-</div>
-
-<div class="section-title" style="color: #dc2626; text-align: center; text-transform: uppercase; letter-spacing: 3px; margin: 40px 0 20px;">02. Mechanical Systems</div>
-
-<div class="grid" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-    <div class="card" style="background: rgba(26, 11, 22, 0.75); border: 1px solid rgba(147, 51, 234, 0.2); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);">
-        <h3 style="color: #9333ea; margin-top: 0; font-size: 1.5rem; text-transform: uppercase;">Dodge Dakota Suspension Refresh</h3>
-        <p style="color: #f3e8ff; opacity: 0.9; margin-bottom: 20px;">Full-scale steering and suspension overhaul for a 2003 Dodge Dakota. Precision installation of upper/lower ball joints, tie rods, and sway bar links to factory-spec torque tolerances.</p>
-        
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Precision Assembly</span>
-            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Diagnosis</span>
-            <span style="border: 1px solid #9333ea; color: #9333ea; padding: 4px 10px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Torque Specs</span>
-        </div>
-
-        <div style="background: rgba(0,0,0,0.3); border: 1px dashed rgba(147, 51, 234, 0.3); margin-top: 20px; height: 150px; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: rgba(243, 232, 255, 0.4); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">
-            [ Suspension Build Photo ]
-        </div>
-    </div>
-</div>
+</body>
+</html>
