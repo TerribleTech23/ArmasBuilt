@@ -5,50 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guides | ArmasBuilt Electronics Restoration</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Ensures the header height matches the other pages exactly */
+        .mobile-break {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-break {
+                display: inline;
+            }
+        }
+
+        /* Forces the Card Titles to be Purple while keeping the main Section Title Red */
+        .card h3 {
+            color: #a855f7 !important;
+            margin: 10px 0;
+            text-transform: none; /* Keeps them looking like proper titles */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <img src="../armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
             <h1>Armas&bull;Built</h1>
-            <p class="tagline">Privacy. Security. Sovereignty.</p>
+            
+            <p class="tagline">Privacy. Security.<span class="mobile-break"><br></span>Sovereignty.</p>
             
             <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
-                <a href="../index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Home</a>
-                <a href="../store.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Store</a>
-                <a href="index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; cursor: pointer; display: inline-block; padding: 10px;">Guides</a>
+                <a href="../index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; display: inline-block; padding: 10px;">Home</a>
+                <a href="../store.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; display: inline-block; padding: 10px;">Store</a>
+                <a href="index.html" style="color: #a855f7; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; display: inline-block; padding: 10px;">Guides</a>
             </nav>
         </header>
 
         <main>
-            <section class="hero" style="text-align: center; margin-bottom: 2.5rem;">
-                <h2 style="font-size: 1.5rem; color: #fff; line-height: 1.4;">Breaking chains and building better. From Android hardening to self-hosting. If it's locked down, we're building it up.</h2>
-            </section>
+            <div class="section-title">Technical Archives</div>
 
-            <div class="grid">
+            <div class="grid" style="margin-top: 30px;">
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem;">Tools</div>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Tools</div>
                     <h3>The Stack</h3>
                     <p>The essential software toolkit I use for mobile development, terminal environments, and digital automation.</p>
                     <a href="apps.html" class="status-badge" style="text-decoration: none; display: inline-block;">Explore Stack</a>
                 </article>
 
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem;">Defense</div>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Defense</div>
                     <h3>Hardening</h3>
                     <p>Comprehensive strategies for private communication, identity security, and network fortification.</p>
                     <a href="privacy-hardening.html" class="status-badge" style="text-decoration: none; display: inline-block;">Secure Your Life</a>
                 </article>
 
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem;">Infrastructure</div>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Infrastructure</div>
                     <h3>Home Lab</h3>
                     <p>Walkthroughs for media automation, remote networking via Tailscale, and self-hosted backups.</p>
                     <a href="guides.html" class="status-badge" style="text-decoration: none; display: inline-block;">Build Something</a>
                 </article>
 
                 <article class="card">
-                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem;">Archives</div>
+                    <div style="font-size: 0.65rem; text-transform: uppercase; color: #fff; font-weight: bold; margin-bottom: 0.5rem; letter-spacing: 1px;">Archives</div>
                     <h3>The Vault</h3>
                     <p>A curated collection of independent media tools, hardened players, and library management software.</p>
                     <a href="thevault.html" class="status-badge" style="text-decoration: none; display: inline-block;">Enter Vault</a>
@@ -57,7 +75,7 @@
         </main>
 
         <div class="footer" style="margin-top: 50px;">
-            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Privacy. Security. Sovereignty.</p>
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.<br>Professional Electronic Restoration & Refurbishment Services.</p>
         </div>
     </div>
 </body>
