@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* Portfolio Specific Styling using your index variables */
+        /* BOLD OVERRIDE - Making the whole site high-impact */
+        body, p, li, .tag, .tagline { 
+            font-weight: 700 !important; 
+        }
+        h1, h2, h3, .section-title, .status-badge, .step-num { 
+            font-weight: 900 !important; 
+        }
+
+        /* Portfolio Specific Styling */
         .project-meta {
             display: flex;
             flex-wrap: wrap;
@@ -23,7 +31,6 @@
             padding: 3px 10px;
             border-radius: 4px;
             text-transform: uppercase;
-            font-weight: bold;
             letter-spacing: 1px;
         }
 
@@ -41,6 +48,7 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 900;
         }
 
         .cert-grid {
@@ -58,9 +66,16 @@
         }
         
         .build-card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 0.95rem;
+            opacity: 1; /* Keeping it bright for the bold look */
             margin-bottom: 0;
+        }
+
+        /* Resume-style Blue Accent for Project Headers */
+        .card h3 {
+            color: #a855f7; /* Matching your purple accent */
+            text-transform: uppercase;
+            margin-top: 0;
         }
     </style>
 </head>
@@ -72,10 +87,10 @@
             <p class="tagline">Technical Build Portfolio</p>
             
             <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
-                <a href="index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">Home</a>
-                <a href="store.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">Store</a>
-                <a href="standard.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">The Standard</a>
-                <a href="guides/index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; padding: 10px;">Guides</a>
+                <a href="index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">Home</a>
+                <a href="store.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">Store</a>
+                <a href="standard.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">The Standard</a>
+                <a href="guides/index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">Guides</a>
             </nav>
         </header>
 
@@ -83,8 +98,19 @@
         
         <div class="grid">
             <div class="card build-card">
-                <h3>01. Network Architecture</h3>
-                <p>Deployment of a Flint 2 gateway featuring network-wide AdGuard DNS filtering and Tailscale split-tunneling for secure remote management.</p>
+                <h3>01. Linux Home Lab (Dell 5567)</h3>
+                <p>Deployment of a Lubuntu-based server environment utilizing Docker and Portainer for container management. Configured Nginx Proxy Manager for traffic routing, Uptime Kuma for service monitoring, and Immich for self-hosted media storage.</p>
+                <div class="project-meta">
+                    <span class="tag">Linux</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">SysAdmin</span>
+                </div>
+                <div class="build-img-placeholder">[ Netdata Dashboard / Docker Stack ]</div>
+            </div>
+
+            <div class="card build-card">
+                <h3>02. Network Architecture</h3>
+                <p>Implementation of a Flint 2 gateway featuring network-wide AdGuard DNS filtering and Tailscale split-tunneling. Secured remote access logic for a distributed home lab environment.</p>
                 <div class="project-meta">
                     <span class="tag">Security</span>
                     <span class="tag">Networking</span>
@@ -93,8 +119,8 @@
             </div>
 
             <div class="card build-card">
-                <h3>02. Mechanical Assembly</h3>
-                <p>Full-scale steering and suspension refresh on a 2003 Dodge Dakota. Component replacement including ball joints and tie rods to OEM torque specifications.</p>
+                <h3>03. Mechanical Assembly</h3>
+                <p>Full-scale steering and suspension refresh on a 2003 Dodge Dakota. Precision component replacement including ball joints and tie rods calibrated to OEM torque specifications.</p>
                 <div class="project-meta">
                     <span class="tag">Suspension</span>
                     <span class="tag">Precision</span>
@@ -103,23 +129,13 @@
             </div>
 
             <div class="card build-card">
-                <h3>03. HVAC & Thermal Control</h3>
-                <p>Diagnostics and maintenance of residential climate systems, focusing on electrical troubleshooting and airflow optimization.</p>
+                <h3>04. HVAC & Thermal Control</h3>
+                <p>Diagnostics and maintenance of residential climate systems, focusing on electrical troubleshooting, brazing, and airflow optimization.</p>
                 <div class="project-meta">
                     <span class="tag">Thermal</span>
                     <span class="tag">Diagnostics</span>
                 </div>
                 <div class="build-img-placeholder">[ HVAC Service Documentation ]</div>
-            </div>
-
-            <div class="card build-card">
-                <h3>04. Structural Restoration</h3>
-                <p>Precision subfloor leveling and structural reinforcement. Custom installation of waterfall plumbing systems with high-pressure leak testing.</p>
-                <div class="project-meta">
-                    <span class="tag">Structural</span>
-                    <span class="tag">Plumbing</span>
-                </div>
-                <div class="build-img-placeholder">[ Subfloor / Fixture Build ]</div>
             </div>
         </div>
 
@@ -128,17 +144,17 @@
         <div class="cert-grid">
             <div class="card">
                 <h3 style="font-size: 1rem; color: var(--accent-red);">Active Certifications</h3>
-                <ul style="font-size: 0.85rem;">
-                    <li><strong>Micro-Soldering:</strong> PCB Repair</li>
-                    <li><strong>Multimeter (DMM):</strong> Diagnostics</li>
-                    <li><strong>Safety:</strong> First Aid / CPR / AED</li>
+                <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
+                    <li>&bull; Micro-Soldering: PCB Repair</li>
+                    <li>&bull; Multimeter (DMM): Diagnostics</li>
+                    <li>&bull; Specialized QC Training (Plunge)</li>
                 </ul>
             </div>
             <div class="card">
                 <h3 style="font-size: 1rem; color: var(--accent-purple);">Development</h3>
-                <ul style="font-size: 0.85rem; opacity: 0.6;">
-                    <li>CompTIA Trifecta (Active)</li>
-                    <li>Google IT Professional (Active)</li>
+                <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
+                    <li>&bull; A.S. Cybersecurity (ARC - In Progress)</li>
+                    <li>&bull; CompTIA A+ / Security+ (In Progress)</li>
                 </ul>
             </div>
         </div>
