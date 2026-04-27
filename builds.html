@@ -19,7 +19,6 @@
             text-transform: uppercase;
         }
 
-        /* Hover effect so they know it's clickable */
         .build-img {
             width: 100%;
             height: auto;
@@ -39,29 +38,31 @@
         .build-card { margin-bottom: 40px; }
         .card h3 { color: #a855f7; text-transform: uppercase; margin-top: 0; }
 
-        /* FULLSCREEN OVERLAY (The Lightbox) */
+        /* FIXED LIGHTBOX: touch-action: none prevents background moving while zoomed */
         #lightbox {
             display: none;
             position: fixed;
             z-index: 999;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             justify-content: center;
             align-items: center;
+            touch-action: none; 
         }
 
         #lightbox img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 95%;
+            max-height: 95%;
             border: 2px solid #a855f7;
             box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
 
-    <div id="lightbox" onclick="this.style.display='none'">
+    <div id="lightbox" onclick="closeImg()">
         <img id="lightbox-img" src="">
     </div>
 
@@ -114,7 +115,7 @@
 
             <div class="card build-card">
                 <h3>04. HVAC Service & Installation</h3>
-                <p>Installation of residential mini-splits and commercial rooftop condensers.</p>
+                <p>Installation of residential mini-splits and maintenance of commercial rooftop condensers.</p>
                 <div class="project-meta">
                     <span class="tag">Condenser</span> <span class="tag">HVAC</span>
                 </div>
@@ -129,9 +130,38 @@
     </div>
 
     <script>
+        let scrollPos = 0;
+
         function showImg(src) {
+            scrollPos = window.scrollY;
             document.getElementById('lightbox-img').src = src;
             document.getElementById('lightbox').style.display = 'flex';
+            
+            // Fix background so it doesn't move while photo is open
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+        }
+
+        function closeImg() {
+            document.getElementById('lightbox').style.display = 'none';
+            
+            // Release background
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            
+            // Snap back to original scroll position
+            window.scrollTo(0, scrollPos);
+
+            // FORCE BROWSER ZOOM RESET
+            const viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport) {
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
+                setTimeout(() => {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                }, 50);
+            }
         }
     </script>
 </body>
