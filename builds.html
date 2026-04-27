@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* BOLD OVERRIDE - Making the whole site high-impact */
+        /* BOLD OVERRIDE - High-impact formatting */
         body, p, li, .tag, .tagline { 
             font-weight: 700 !important; 
         }
@@ -16,7 +16,6 @@
             font-weight: 900 !important; 
         }
 
-        /* Portfolio Specific Styling */
         .project-meta {
             display: flex;
             flex-wrap: wrap;
@@ -27,7 +26,7 @@
 
         .tag {
             font-size: 0.75rem;
-            color: #a855f7; /* Purple accent */
+            color: #a855f7; 
             border: 1px solid #a855f7;
             padding: 3px 10px;
             border-radius: 4px;
@@ -35,48 +34,15 @@
             letter-spacing: 1px;
         }
 
-        /* Image Styling - Replaces Placeholders */
         .build-img {
             width: 100%;
             height: auto;
-            max-height: 300px;
+            max-height: 400px;
             object-fit: cover;
-            border: 1px solid var(--border);
+            border: 1px solid #333;
             border-radius: 8px;
             margin-top: 15px;
             display: block;
-            filter: grayscale(20%);
-            transition: filter 0.3s ease;
-        }
-
-        .build-img:hover {
-            filter: grayscale(0%);
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .cert-grid { grid-template-columns: 1fr; }
-        }
-
-        .build-card {
-            margin-bottom: 30px;
-        }
-        
-        .build-card p {
-            font-size: 0.95rem;
-            opacity: 1; 
-            margin-bottom: 0;
-        }
-
-        .card h3 {
-            color: #a855f7; 
-            text-transform: uppercase;
-            margin-top: 0;
         }
 
         .img-grid {
@@ -84,6 +50,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-top: 15px;
+        }
+
+        .build-card {
+            margin-bottom: 40px;
+        }
+        
+        .card h3 {
+            color: #a855f7; 
+            text-transform: uppercase;
+            margin-top: 0;
         }
     </style>
 </head>
@@ -94,11 +70,11 @@
             <h1>Armas&bull;Built</h1>
             <p class="tagline">Technical Build Portfolio</p>
             
-            <nav style="margin-top: 25px; text-align: center; position: relative; z-index: 9999;">
-                <a href="index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">Home</a>
-                <a href="store.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">Store</a>
-                <a href="standard.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">The Standard</a>
-                <a href="guides/index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase; padding: 10px;">Guides</a>
+            <nav style="margin-top: 25px; text-align: center;">
+                <a href="index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase;">Home</a>
+                <a href="store.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase;">Store</a>
+                <a href="standard.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase;">The Standard</a>
+                <a href="guides/index.html" style="color: #a855f7; margin: 0 10px; text-decoration: none; text-transform: uppercase;">Guides</a>
             </nav>
         </header>
 
@@ -106,12 +82,12 @@
         
         <div class="grid">
             <div class="card build-card">
-                <h3>01. Linux Home Lab (Dell PowerEdge)</h3>
-                <p>Deployment of a Lubuntu-based server environment utilizing Docker and Portainer for container management. Configured Uptime Kuma for service monitoring and Immich for self-hosted media storage.</p>
+                <h3>01. Linux Home Lab (Dell 5567)</h3>
+                <p>Deployment of a Lubuntu-based server environment on Dell 5567 hardware. Utilizes Docker and Portainer for container orchestration, including Immich for self-hosted media and Uptime Kuma for monitoring.</p>
                 <div class="project-meta">
                     <span class="tag">Linux</span>
                     <span class="tag">Docker</span>
-                    <span class="tag">SysAdmin</span>
+                    <span class="tag">Immich</span>
                 </div>
                 <img src="homarr.png" alt="Homarr Dashboard" class="build-img">
                 <div class="img-grid">
@@ -122,10 +98,11 @@
 
             <div class="card build-card">
                 <h3>02. Network Architecture</h3>
-                <p>Implementation of a Flint 2 gateway featuring network-wide AdGuard DNS filtering and Tailscale split-tunneling. Managed via Nginx Proxy Manager for secure external traffic routing.</p>
+                <p>Implementation of a Flint 2 gateway featuring AdGuard DNS and Tailscale. Traffic managed via Nginx Proxy Manager with real-time telemetry provided by Netdata.</p>
                 <div class="project-meta">
                     <span class="tag">Security</span>
                     <span class="tag">Networking</span>
+                    <span class="tag">Netdata</span>
                 </div>
                 <img src="proxy.png" alt="Nginx Proxy Manager" class="build-img">
                 <img src="Netdata.png" alt="Netdata Metrics" class="build-img">
@@ -133,10 +110,10 @@
 
             <div class="card build-card">
                 <h3>03. Mechanical Assembly</h3>
-                <p>Full-scale steering and suspension refresh on a 2003 Dodge Dakota. Precision component replacement including ball joints and tie rods calibrated to OEM torque specifications.</p>
+                <p>Precision suspension refresh on a 2003 Dodge Dakota. Includes full teardown of the steering knuckle and installation of new tie rods and ball joints to OEM specs.</p>
                 <div class="project-meta">
                     <span class="tag">Suspension</span>
-                    <span class="tag">Precision</span>
+                    <span class="tag">OBD-II</span>
                 </div>
                 <img src="tierod.jpg" alt="Dakota Suspension Work" class="build-img">
                 <div class="img-grid">
@@ -148,10 +125,9 @@
 
             <div class="card build-card">
                 <h3>04. HVAC & Thermal Control</h3>
-                <p>Diagnostics and maintenance of residential and commercial climate systems, focusing on electrical troubleshooting, panel work, and airflow optimization.</p>
+                <p>Installation and diagnostics of residential mini-splits and commercial package units. Professional electrical panel work and refrigerant circuit troubleshooting.</p>
                 <div class="project-meta">
-                    <span class="tag">Thermal</span>
-                    <span class="tag">Diagnostics</span>
+                    <span class="tag">HVAC</span>
                     <span class="tag">Electrical</span>
                 </div>
                 <img src="acsplit.jpg" alt="Fujitsu Mini-Split Install" class="build-img">
@@ -180,8 +156,7 @@
         </div>
 
         <div class="footer">
-            <p>Full reference documentation and high-resolution logs available upon request.<br>
-            &copy; 2026 ArmasBuilt. Sacramento, CA.</p>
+            <p>&copy; 2026 ArmasBuilt. Sacramento, CA.</p>
         </div>
     </div>
 </body>
