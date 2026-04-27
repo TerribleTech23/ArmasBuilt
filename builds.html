@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* BOLD OVERRIDE - High-impact formatting */
+        /* BOLD OVERRIDE */
         body, p, li, .tag, .tagline { 
             font-weight: 700 !important; 
         }
@@ -20,8 +20,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin: 15px 0;
         }
 
         .tag {
@@ -34,7 +33,7 @@
             letter-spacing: 1px;
         }
 
-        /* FIX: No more forced cropping or zooming */
+        /* IMAGE FIX: Shows the WHOLE photo, no more "zoomed in" or chopped looks */
         .build-img {
             width: 100%;
             height: auto;
@@ -42,17 +41,15 @@
             border: 1px solid #333;
             border-radius: 8px;
             margin-top: 15px;
-            background: #000; /* Keeps the frame consistent if the photo is tall */
-            object-fit: contain; /* Shows the WHOLE photo, no zoom */
+            background: #000; 
+            object-fit: contain; /* This prevents the cropping you saw in the video */
         }
 
-        /* FIX: Grid alignment for multi-photo sections */
         .img-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin-top: 15px;
-            align-items: start;
         }
 
         .build-card {
@@ -86,7 +83,7 @@
         <div class="grid">
             <div class="card build-card">
                 <h3>01. Linux Home Lab (Dell 5567)</h3>
-                <p>Deployment of a Lubuntu-based server environment on Dell 5567 hardware. Utilizes Docker and Portainer for container orchestration, including Immich for self-hosted media and Uptime Kuma for monitoring.</p>
+                <p>Lubuntu-based server environment on Dell 5567 hardware. Running Docker/Portainer orchestration with Immich and Uptime Kuma.</p>
                 <div class="project-meta">
                     <span class="tag">Linux</span>
                     <span class="tag">Docker</span>
@@ -94,67 +91,47 @@
                 </div>
                 <img src="homarr.png" alt="Homarr Dashboard" class="build-img">
                 <div class="img-grid">
-                    <img src="Portainer.png" alt="Portainer Management" class="build-img" style="margin-top:0;">
+                    <img src="portainer.png" alt="Portainer Management" class="build-img" style="margin-top:0;">
                     <img src="uptimekuma.png" alt="Uptime Monitoring" class="build-img" style="margin-top:0;">
                 </div>
             </div>
 
             <div class="card build-card">
                 <h3>02. Network Architecture</h3>
-                <p>Implementation of a Flint 2 gateway featuring AdGuard DNS and Tailscale. Traffic managed via Nginx Proxy Manager with real-time telemetry provided by Netdata.</p>
+                <p>Flint 2 gateway with AdGuard DNS and Tailscale. Traffic routing via Nginx Proxy Manager with Netdata telemetry.</p>
                 <div class="project-meta">
                     <span class="tag">Security</span>
                     <span class="tag">Networking</span>
                     <span class="tag">Netdata</span>
                 </div>
                 <img src="proxy.png" alt="Nginx Proxy Manager" class="build-img">
-                <img src="Netdata.png" alt="Netdata Metrics" class="build-img">
+                <img src="netdata.png" alt="Netdata Metrics" class="build-img">
             </div>
 
             <div class="card build-card">
                 <h3>03. Mechanical Assembly</h3>
-                <p>Precision suspension refresh on a 2003 Dodge Dakota. Includes full teardown of the steering knuckle and installation of new tie rods and ball joints to OEM specs.</p>
+                <p>2003 Dodge Dakota suspension overhaul. Steering knuckle teardown with new ball joints and tie rods.</p>
                 <div class="project-meta">
                     <span class="tag">Suspension</span>
-                    <span class="tag">OBD-II</span>
+                    <span class="tag">Diagnostics</span>
                 </div>
-                <img src="tierod.jpg" alt="Dakota Suspension Work" class="build-img">
+                <img src="tierod.jpg" alt="Dakota Suspension" class="build-img">
                 <div class="img-grid">
-                    <img src="knuckle.jpg" alt="Steering Knuckle Teardown" class="build-img" style="margin-top:0;">
-                    <img src="swaybar.jpg" alt="Sway Bar Install" class="build-img" style="margin-top:0;">
+                    <img src="knuckle.jpg" alt="Teardown" class="build-img" style="margin-top:0;">
+                    <img src="swaybar.jpg" alt="Sway Bar" class="build-img" style="margin-top:0;">
                 </div>
-                <img src="obd.jpg" alt="OBD-II Diagnostics" class="build-img">
+                <img src="obd.jpg" alt="OBD-II Code Reader" class="build-img">
             </div>
 
             <div class="card build-card">
                 <h3>04. HVAC & Thermal Control</h3>
-                <p>Installation and diagnostics of residential mini-splits and commercial package units. Professional electrical panel work and refrigerant circuit troubleshooting.</p>
+                <p>Installation and troubleshooting of mini-split and package units. Focus on electrical circuits and airflow.</p>
                 <div class="project-meta">
                     <span class="tag">HVAC</span>
                     <span class="tag">Electrical</span>
                 </div>
-                <img src="acsplit.jpg" alt="Fujitsu Mini-Split Install" class="build-img">
-                <img src="acpackage.jpg" alt="Commercial Package Unit" class="build-img">
-            </div>
-        </div>
-
-        <div class="section-title">Credentials & Training</div>
-        
-        <div class="cert-grid">
-            <div class="card">
-                <h3 style="font-size: 1rem; color: #a855f7;">Active Certifications</h3>
-                <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
-                    <li>&bull; Micro-Soldering: PCB Repair</li>
-                    <li>&bull; Multimeter (DMM): Diagnostics</li>
-                    <li>&bull; Specialized QC Training (Plunge)</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3 style="font-size: 1rem; color: #a855f7;">Development</h3>
-                <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
-                    <li>&bull; A.S. Cybersecurity (ARC - In Progress)</li>
-                    <li>&bull; CompTIA A+ / Security+ (In Progress)</li>
-                </ul>
+                <img src="acsplit.jpg" alt="Mini-Split" class="build-img">
+                <img src="acpackage.jpg" alt="Rooftop Unit" class="build-img">
             </div>
         </div>
 
