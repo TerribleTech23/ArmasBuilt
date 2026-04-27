@@ -22,33 +22,35 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         .tag {
             font-size: 0.75rem;
-            color: var(--accent-red);
-            border: 1px solid var(--accent-red);
+            color: #a855f7; /* Purple accent */
+            border: 1px solid #a855f7;
             padding: 3px 10px;
             border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .build-img-placeholder {
+        /* Image Styling - Replaces Placeholders */
+        .build-img {
             width: 100%;
-            height: 250px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px dashed var(--border);
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border: 1px solid var(--border);
             border-radius: 8px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-purple);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 900;
+            margin-top: 15px;
+            display: block;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+
+        .build-img:hover {
+            filter: grayscale(0%);
         }
 
         .cert-grid {
@@ -67,15 +69,21 @@
         
         .build-card p {
             font-size: 0.95rem;
-            opacity: 1; /* Keeping it bright for the bold look */
+            opacity: 1; 
             margin-bottom: 0;
         }
 
-        /* Resume-style Blue Accent for Project Headers */
         .card h3 {
-            color: #a855f7; /* Matching your purple accent */
+            color: #a855f7; 
             text-transform: uppercase;
             margin-top: 0;
+        }
+
+        .img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -98,24 +106,29 @@
         
         <div class="grid">
             <div class="card build-card">
-                <h3>01. Linux Home Lab (Dell 5567)</h3>
-                <p>Deployment of a Lubuntu-based server environment utilizing Docker and Portainer for container management. Configured Nginx Proxy Manager for traffic routing, Uptime Kuma for service monitoring, and Immich for self-hosted media storage.</p>
+                <h3>01. Linux Home Lab (Dell PowerEdge)</h3>
+                <p>Deployment of a Lubuntu-based server environment utilizing Docker and Portainer for container management. Configured Uptime Kuma for service monitoring and Immich for self-hosted media storage.</p>
                 <div class="project-meta">
                     <span class="tag">Linux</span>
                     <span class="tag">Docker</span>
                     <span class="tag">SysAdmin</span>
                 </div>
-                <div class="build-img-placeholder">[ Netdata Dashboard / Docker Stack ]</div>
+                <img src="homarr.png" alt="Homarr Dashboard" class="build-img">
+                <div class="img-grid">
+                    <img src="Portainer.png" alt="Portainer Management" class="build-img" style="margin-top:0;">
+                    <img src="uptimekuma.png" alt="Uptime Monitoring" class="build-img" style="margin-top:0;">
+                </div>
             </div>
 
             <div class="card build-card">
                 <h3>02. Network Architecture</h3>
-                <p>Implementation of a Flint 2 gateway featuring network-wide AdGuard DNS filtering and Tailscale split-tunneling. Secured remote access logic for a distributed home lab environment.</p>
+                <p>Implementation of a Flint 2 gateway featuring network-wide AdGuard DNS filtering and Tailscale split-tunneling. Managed via Nginx Proxy Manager for secure external traffic routing.</p>
                 <div class="project-meta">
                     <span class="tag">Security</span>
                     <span class="tag">Networking</span>
                 </div>
-                <div class="build-img-placeholder">[ AdGuard / Tailscale Dashboard ]</div>
+                <img src="proxy.png" alt="Nginx Proxy Manager" class="build-img">
+                <img src="Netdata.png" alt="Netdata Metrics" class="build-img">
             </div>
 
             <div class="card build-card">
@@ -125,17 +138,24 @@
                     <span class="tag">Suspension</span>
                     <span class="tag">Precision</span>
                 </div>
-                <div class="build-img-placeholder">[ Dodge Dakota Suspension Build ]</div>
+                <img src="tierod.jpg" alt="Dakota Suspension Work" class="build-img">
+                <div class="img-grid">
+                    <img src="knuckle.jpg" alt="Steering Knuckle Teardown" class="build-img" style="margin-top:0;">
+                    <img src="swaybar.jpg" alt="Sway Bar Install" class="build-img" style="margin-top:0;">
+                </div>
+                <img src="obd.jpg" alt="OBD-II Diagnostics" class="build-img">
             </div>
 
             <div class="card build-card">
                 <h3>04. HVAC & Thermal Control</h3>
-                <p>Diagnostics and maintenance of residential climate systems, focusing on electrical troubleshooting, brazing, and airflow optimization.</p>
+                <p>Diagnostics and maintenance of residential and commercial climate systems, focusing on electrical troubleshooting, panel work, and airflow optimization.</p>
                 <div class="project-meta">
                     <span class="tag">Thermal</span>
                     <span class="tag">Diagnostics</span>
+                    <span class="tag">Electrical</span>
                 </div>
-                <div class="build-img-placeholder">[ HVAC Service Documentation ]</div>
+                <img src="acsplit.jpg" alt="Fujitsu Mini-Split Install" class="build-img">
+                <img src="acpackage.jpg" alt="Commercial Package Unit" class="build-img">
             </div>
         </div>
 
@@ -143,7 +163,7 @@
         
         <div class="cert-grid">
             <div class="card">
-                <h3 style="font-size: 1rem; color: var(--accent-red);">Active Certifications</h3>
+                <h3 style="font-size: 1rem; color: #a855f7;">Active Certifications</h3>
                 <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
                     <li>&bull; Micro-Soldering: PCB Repair</li>
                     <li>&bull; Multimeter (DMM): Diagnostics</li>
@@ -151,7 +171,7 @@
                 </ul>
             </div>
             <div class="card">
-                <h3 style="font-size: 1rem; color: var(--accent-purple);">Development</h3>
+                <h3 style="font-size: 1rem; color: #a855f7;">Development</h3>
                 <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
                     <li>&bull; A.S. Cybersecurity (ARC - In Progress)</li>
                     <li>&bull; CompTIA A+ / Security+ (In Progress)</li>
