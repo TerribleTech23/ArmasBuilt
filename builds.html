@@ -7,16 +7,8 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* BOLD HIGH-IMPACT STYLING */
         body, p, li, .tag, .tagline { font-weight: 700 !important; }
-        h1, h2, h3, .section-title, .status-badge { font-weight: 900 !important; }
-
-        .project-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
+        h1, h2, h3, .section-title { font-weight: 900 !important; }
 
         .tag {
             font-size: 0.75rem;
@@ -27,6 +19,7 @@
             text-transform: uppercase;
         }
 
+        /* Hover effect so they know it's clickable */
         .build-img {
             width: 100%;
             height: auto;
@@ -35,21 +28,43 @@
             border-radius: 8px;
             margin-top: 15px;
             background: #000; 
-            object-fit: contain; 
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .img-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
-        }
+        .build-img:hover { transform: scale(1.02); border-color: #a855f7; }
 
+        .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
         .build-card { margin-bottom: 40px; }
         .card h3 { color: #a855f7; text-transform: uppercase; margin-top: 0; }
+
+        /* FULLSCREEN OVERLAY (The Lightbox) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 2px solid #a855f7;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
     </style>
 </head>
 <body>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="">
+    </div>
+
     <div class="container">
         <header>
             <img src="armasbuilt-shield.png" alt="ArmasBuilt" class="main-logo">
@@ -62,57 +77,49 @@
         <div class="grid">
             <div class="card build-card">
                 <h3>01. Linux Home Lab (Dell 5567)</h3>
-                <p>Lubuntu-based environment on Dell 5567 hardware. Running Docker/Portainer orchestration with Immich and Uptime Kuma monitoring.</p>
+                <p>Lubuntu environment on Dell 5567. Running Docker/Portainer with Immich and Uptime Kuma.</p>
                 <div class="project-meta">
-                    <span class="tag">Linux</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Immich</span>
+                    <span class="tag">Linux</span> <span class="tag">Docker</span>
                 </div>
-                <img src="homarr.png" alt="Homarr Dashboard" class="build-img">
+                <img src="homarr.png" class="build-img" onclick="showImg(this.src)">
                 <div class="img-grid">
-                    <img src="portainer.png" alt="Portainer" class="build-img" style="margin-top:0;">
-                    <img src="uptimekuma.png" alt="Uptime Kuma" class="build-img" style="margin-top:0;">
+                    <img src="portainer.png" class="build-img" style="margin-top:0;" onclick="showImg(this.src)">
+                    <img src="uptimekuma.png" class="build-img" style="margin-top:0;" onclick="showImg(this.src)">
                 </div>
             </div>
 
             <div class="card build-card">
                 <h3>02. Network Architecture</h3>
-                <p>Flint 2 gateway with AdGuard DNS and Tailscale. Traffic routing via Nginx Proxy Manager with Netdata telemetry.</p>
+                <p>Flint 2 gateway with AdGuard DNS/Tailscale. Nginx Proxy Manager and Netdata telemetry.</p>
                 <div class="project-meta">
-                    <span class="tag">Security</span>
-                    <span class="tag">Networking</span>
-                    <span class="tag">Netdata</span>
+                    <span class="tag">Networking</span> <span class="tag">Netdata</span>
                 </div>
-                <img src="proxy.png" alt="Nginx Proxy Manager" class="build-img">
-                <img src="netdata.png" alt="Netdata" class="build-img">
+                <img src="proxy.png" class="build-img" onclick="showImg(this.src)">
+                <img src="netdata.png" class="build-img" onclick="showImg(this.src)">
             </div>
 
             <div class="card build-card">
                 <h3>03. Mechanical & Engine Diagnostics</h3>
-                <p>Full suspension overhaul on a 2003 Dodge Dakota alongside electrical engine diagnostics. Pulling live sensor data for circuit troubleshooting.</p>
+                <p>Full suspension overhaul on 2003 Dodge Dakota alongside electrical engine diagnostics.</p>
                 <div class="project-meta">
-                    <span class="tag">Suspension</span>
-                    <span class="tag">OBD-II</span>
-                    <span class="tag">Electrical</span>
+                    <span class="tag">Suspension</span> <span class="tag">OBD-II</span>
                 </div>
-                <img src="obd.jpg" alt="P0032 Diagnostic" class="build-img">
+                <img src="obd.jpg" class="build-img" onclick="showImg(this.src)">
                 <div class="img-grid">
-                    <img src="knuckle.jpg" alt="Teardown" class="build-img" style="margin-top:0;">
-                    <img src="tierod.jpg" alt="Assembly" class="build-img" style="margin-top:0;">
+                    <img src="knuckle.jpg" class="build-img" style="margin-top:0;" onclick="showImg(this.src)">
+                    <img src="tierod.jpg" class="build-img" style="margin-top:0;" onclick="showImg(this.src)">
                 </div>
-                <img src="swaybar.jpg" alt="Final Install" class="build-img">
+                <img src="swaybar.jpg" class="build-img" onclick="showImg(this.src)">
             </div>
 
             <div class="card build-card">
                 <h3>04. HVAC Service & Installation</h3>
-                <p>Installation of residential mini-split systems and maintenance of commercial rooftop condensers. Focus on electrical disconnects and refrigerant lines.</p>
+                <p>Installation of residential mini-splits and commercial rooftop condensers.</p>
                 <div class="project-meta">
-                    <span class="tag">Condenser</span>
-                    <span class="tag">Mini-Split</span>
-                    <span class="tag">HVAC</span>
+                    <span class="tag">Condenser</span> <span class="tag">HVAC</span>
                 </div>
-                <img src="acsplit.jpg" alt="Fujitsu Mini-Split" class="build-img">
-                <img src="acpackage.jpg" alt="Commercial Rooftop Condenser" class="build-img">
+                <img src="acsplit.jpg" class="build-img" onclick="showImg(this.src)">
+                <img src="acpackage.jpg" class="build-img" onclick="showImg(this.src)">
             </div>
         </div>
 
@@ -120,5 +127,12 @@
             <p>&copy; 2026 ArmasBuilt. Sacramento, CA.</p>
         </div>
     </div>
+
+    <script>
+        function showImg(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
